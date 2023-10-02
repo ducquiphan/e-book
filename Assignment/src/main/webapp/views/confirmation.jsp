@@ -49,12 +49,14 @@
 			<div class="order_d_inner">
 				<div class="">
 					<div class="details_item">
+
 						<h4>Thông tin đơn hàng</h4>
 						<ul class="list">
 							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Mã đơn</span>: 1</a></li>
 							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Ngày đặt</span>: 1/10/2023</a></li>
 							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Tổng tiền</span>: 500.000 VND</a></li>
 							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Phương pháp thanh toán</span>: Paypal</a></li>
+
 						</ul>
 					</div>
 				</div>

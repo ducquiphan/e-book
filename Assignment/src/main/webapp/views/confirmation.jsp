@@ -33,9 +33,8 @@
 				<div class="col-first">
 					<h1>Xác nhận đơn hàng</h1>
 					<nav class="d-flex align-items-center">
-						<a href="/home">Home<span class="lnr lnr-arrow-right"></span></a>
-						<a href="/cart">Giỏ hàng<span class="lnr lnr-arrow-right"></span></a>
-						<a href="/cart/confirmation">Xác nhận đơn hàng</a>
+						<a href="/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+						<a href="">Xác nhận đơn hàng</a>
 					</nav>
 				</div>
 			</div>
@@ -50,12 +49,12 @@
 			<div class="order_d_inner">
 				<div class="">
 					<div class="details_item">
-						<h4>Order Info</h4>
+						<h4>Thông tin đơn hàng</h4>
 						<ul class="list">
-							<li><a href="#"><span>Mã đơn</span> : 60235</a></li>
-							<li><a href="#"><span>Ngày đặt</span> : </a></li>
-							<li><a href="#"><span>Tổng tiền</span> : USD 2210</a></li>
-							<li><a href="#"><span>Phương pháp thanh toán</span> : Check payments</a></li>
+							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Mã đơn</span>: 1</a></li>
+							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Ngày đặt</span>: 1/10/2023</a></li>
+							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Tổng tiền</span>: 500.000 VND</a></li>
+							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Phương pháp thanh toán</span>: Paypal</a></li>
 						</ul>
 					</div>
 				</div>
@@ -66,7 +65,7 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th scope="col">Product</th>
+								<th scope="col">Sản phẩm</th>
 								<th scope="col">Số lượng</th>
 								<th scope="col">Tổng tiền</th>
 							</tr>

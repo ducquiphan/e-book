@@ -32,10 +32,10 @@
 								role="button" aria-haspopup="true" aria-expanded="false">Nhà
 									sách</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link"
-										href="/category">Tủ sách</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="/product">Chi tiết sản phẩm</a></li>
+									<li class="nav-item"><a class="nav-link" href="/category">Tủ
+											sách</a></li>
+									<li class="nav-item"><a class="nav-link" href="/product">Chi
+											tiết sản phẩm</a></li>
 									<li class="nav-item"><a class="nav-link"
 										href="/cart/checkout">Thanh toán</a></li>
 									<li class="nav-item"><a class="nav-link"
@@ -57,15 +57,16 @@
 								role="button" aria-haspopup="true" aria-expanded="false">Thông
 									tin tài khoản</a>
 								<ul class="dropdown-menu">
-									<li class="nav-item"><a class="nav-link"
-										href="/user">Thông tin</a></li>
+									<li class="nav-item"><a class="nav-link" href="/user">Thông
+											tin</a></li>
 									<li class="nav-item"><a class="nav-link"
 										href="/user/changepassword">Đổi mật khẩu</a></li>
-									<li class="nav-item"><a class="nav-link"
-										href="#">Đăng xuất</a></li>
+									<li class="nav-item"><a class="nav-link" href="#">Đăng
+											xuất</a></li>
 								</ul></li>
 							<li class="nav-item"><a class="nav-link" href="/contact">Liên
 									hệ</a></li>
+							<li class="nav-item"><a class="nav-link" href="">Đăng xuất</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li class="nav-item"><a href="/user/login" class="cart"><span

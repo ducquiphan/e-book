@@ -59,13 +59,12 @@
 					</div>
 					<div class="col-md-12 form-group">
 						<input type="text" class="form-control" id="email" name="email"
-							placeholder="Email" onfocus="this.placeholder = ''"
+							placeholder="Email" onfocus="this.placeholder = ''"							
 							onblur="this.placeholder = 'Email'">
 					</div>
 					<div class="col-md-12 form-group">
-						<div class="input-group">
-							<input name="picture" type="file" class="form-control" id="picture"/>
-							<label class="input-group-text" for="picture">Ảnh</label>
+						<div class="form-group">
+						Thêm Ảnh <input name="picture" type="file" class="form-control" id="picture"/>							
 						</div>
 					</div>
 					<div class="col-md-12 form-group">

@@ -50,12 +50,24 @@
 				<div class="">
 					<div class="details_item">
 						<h4>Chi tiết đơn hàng</h4>
-						<ul class="list">
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Mã đơn</span>: 1</a></li>
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Ngày đặt</span>: 1/10/2023</a></li>
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Tổng tiền</span>: 500.000 VND</a></li>
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Phương pháp thanh toán</span>: Paypal</a></li>
-						</ul>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Mã Đơn</th>
+									<th scope="col">Ngày Đặt</th>
+									<th scope="col">Tổng Tiền</th>
+									<th scope="col">Phương Pháp Thanh Toán</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>1/10/2023</td>
+									<td>500.000vnd</td>
+									<td>Paypal</td>
+								</tr>								
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -73,13 +85,13 @@
 						<tbody>
 							<tr>
 								<td>
-									<p>Pixelstore fresh Blackberry</p>
+									<p>Nhà Giả Kim</p>
 								</td>
 								<td>
 									<h5>x 02</h5>
 								</td>
 								<td>
-									<p>120.000 VND</p>
+									<p>500.000 VND</p>
 								</td>
 							</tr>
 						</tbody>

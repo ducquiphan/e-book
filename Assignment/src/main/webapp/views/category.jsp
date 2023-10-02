@@ -96,11 +96,13 @@
 						<div class="head">Nhà xuất bản</div>
 						<form action="#">
 							<ul>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Apple<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Asus<span>(29)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Gionee<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Micromax<span>(19)</span></label></li>
-								<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Samsung<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="apple" name="brand"><label for="apple">Nhà Xuất Bản Giáo Dục<span>(29)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="asus" name="brand"><label for="asus">Nhà Xuất Bản Kim Đồng<span>(29)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="gionee" name="brand"><label for="gionee">Nhà Xuất Bản Trẻ<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="micromax" name="brand"><label for="micromax">Nhà Xuất Bản Tp HCM<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Nhà Xuất Bản Hội Nhà Văn<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Nhà Xuất Bản Tư Pháp<span>(19)</span></label></li>
+								<li class="filter-list"><input class="pixel-radio" type="radio" id="samsung" name="brand"><label for="samsung">Nhà Xuất Bản Lao Động<span>(19)</span></label></li>
 							</ul>
 						</form>
 					</div>
@@ -131,19 +133,133 @@
 						<!-- single product -->
 						<div class="col-lg-4 col-md-6">
 							<div class="single-product">
-								<img class="img-fluid" src="${path}/img/product/p1.jpg" alt="">
+								<img class="img-fluid1" src="${path}/img/category/hoang-tu-be.jpg" alt="">
 								<div class="product-details">
-									<h6>addidas New Hammer sole
-										for Sports person</h6>
+									<h6>HOÀNG TỬ BÉ</h6>
 									<div class="price">
-										<h6>$150.00</h6>
-										<h6 class="l-through">$210.00</h6>
+										<h6>139.000 vnd</h6>
+										<h6 class="l-through">150.000 vnd</h6>
 									</div>
 									<div class="prd-bottom">
 
 										<a href="" class="social-info">
 											<span class="ti-bag"></span>
-											<p class="hover-text">thêm vào giỏ</p>
+											<p class="hover-text">Thêm vào giỏ</p>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-move"></span>
+											<p class="hover-text">Xem chi tiết</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<img class="img-fluid1" src="${path}/img/category/hoa-troi-tren-song-nuoc.jpg" alt="">
+								<div class="product-details">
+									<h6>HOA TRÔI TRÊN SÔNG NƯỚC</h6>
+									<div class="price">
+										<h6>59.000 vnd</h6>
+										<h6 class="l-through">70.000 vnd</h6>
+									</div>
+									<div class="prd-bottom">
+
+										<a href="" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Thêm vào giỏ</p>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-move"></span>
+											<p class="hover-text">Xem chi tiết</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<img class="img-fluid1" src="${path}/img/category/khong-gia-dinh.jpg" alt="">
+								<div class="product-details">
+									<h6>KHÔNG GIA ĐÌNH</h6>
+									<div class="price">
+										<h6>145.000 vnd</h6>
+										<h6 class="l-through">180.000 vnd</h6>
+									</div>
+									<div class="prd-bottom">
+
+										<a href="" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Thêm vào giỏ</p>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-move"></span>
+											<p class="hover-text">Xem chi tiết</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<img class="img-fluid1" src="${path}/img/category/huyen-thuat-va-cac-dao-si-Tay_tang.jpg" alt="">
+								<div class="product-details">
+									<h6>HUYỄN THUẬT VÀ CÁC ĐẠO SĨ TÂY TẠNG</h6>
+									<div class="price">
+										<h6>95.000 vnd</h6>
+										<h6 class="l-through">110.000 vnd</h6>
+									</div>
+									<div class="prd-bottom">
+
+										<a href="" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Thêm vào giỏ</p>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-move"></span>
+											<p class="hover-text">Xem chi tiết</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<img class="img-fluid1" src="${path}/img/category/luoc-su-ve-loai-nguoi.jpg" alt="">
+								<div class="product-details">
+									<h6>LƯỢC SỬ LOÀI NGƯỜI</h6>
+									<div class="price">
+										<h6>55.000 vnd</h6>
+										<h6 class="l-through">75.000 vnd</h6>
+									</div>
+									<div class="prd-bottom">
+
+										<a href="" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Thêm vào giỏ</p>
+										</a>
+										<a href="" class="social-info">
+											<span class="lnr lnr-move"></span>
+											<p class="hover-text">Xem chi tiết</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div class="single-product">
+								<img class="img-fluid1" src="${path}/img/category/nhung-nguoi-khon-kho.jpg" alt="">
+								<div class="product-details">
+									<h6>NHŨNG NGƯỜI KHỐN KHÓ</h6>
+									<div class="price">
+										<h6>310.000 vnd</h6>
+										<h6 class="l-through">400.000 vnd</h6>
+									</div>
+									<div class="prd-bottom">
+
+										<a href="" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Thêm vào giỏ</p>
 										</a>
 										<a href="" class="social-info">
 											<span class="lnr lnr-move"></span>

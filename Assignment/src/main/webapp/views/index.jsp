@@ -231,7 +231,7 @@
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/am-anh-tu-kiep-truoc.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/am-anh-tu-kiep-truoc.jpg" alt="">
 							<div class="product-details">
 								<h6>ÁM ẢNH TỪ KIẾP TRƯỚC</h6>
 								<div class="price">
@@ -255,7 +255,7 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/am-thanh-va-cuong-no.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/am-thanh-va-cuong-no.jpg" alt="">
 							<div class="product-details">
 								<h6>ÂM THANH VÀ CUỒNG NỘ</h6>
 								<div class="price">
@@ -279,7 +279,7 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/bao-tap-trieu-tran-bao-tap-cung-dinh.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/bao-tap-trieu-tran-bao-tap-cung-dinh.jpg" alt="">
 							<div class="product-details">
 								<h6>BẢO TÁP TRIỀU TRẦN BẢO TÁP CUNG ĐÌNH</h6>
 								<div class="price">
@@ -303,7 +303,7 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/ben-rang-tuyet-son.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/ben-rang-tuyet-son.jpg" alt="">
 							<div class="product-details">
 								<h6>BÊN RẶNG TUYẾT SƠN</h6>
 								<div class="price">
@@ -343,11 +343,11 @@
 					<!-- single product -->
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/chua-te-cua-nhung-chiec-nhan.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/chua-te-cua-nhung-chiec-nhan.jpg" alt="">
 							<div class="product-details">
 								<h6>CHÚA TỂ CỦA NHỮNG CHIẾC NHẪN</h6>
 								<div class="price">
-									<h6>299.000 vnd</h6>
+									<h6>199.000 vnd</h6>
 									<h6 class="l-through">299.000 vnd</h6>
 								</div>
 								<div class="prd-bottom">
@@ -367,12 +367,12 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/coi-troi-linh-hon.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/coi-troi-linh-hon.jpg" alt="">
 							<div class="product-details">
 								<h6>CỎI TRỜI LINH HỒN</h6>
 								<div class="price">
 									<h6>299.000 vnd</h6>
-									<h6 class="l-through">299.000 vnd</h6>
+									<h6 class="l-through">399.000 vnd</h6>
 								</div>
 								<div class="prd-bottom">
 									<a href="" class="social-info"> <span class="ti-bag"></span>
@@ -391,12 +391,12 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/chua-te-cua-nhung-chiec-nhan.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/cuon-theo-chieu-gio.jpg" alt="">
 							<div class="product-details">
-								<h6>CHÚA TỂ CỦA NHỮNG CHIẾC NHẪN</h6>
+								<h6>CUỐN THEO CHIỀU GIÓ</h6>
 								<div class="price">
 									<h6>299.000 vnd</h6>
-									<h6 class="l-through">299.000 vnd</h6>
+									<h6 class="l-through">499.000 vnd</h6>
 								</div>
 								<div class="prd-bottom">
 									<a href="" class="social-info"> <span class="ti-bag"></span>
@@ -415,12 +415,12 @@
 					</div>
 					<div class="col-lg-3 col-md-6">
 						<div class="single-product">
-							<img class="img-fluid" src="${path}/img/category/chua-te-cua-nhung-chiec-nhan.jpg" alt="">
+							<img class="img-fluid1" src="${path}/img/category/hai-so-phan.jpg" alt="">
 							<div class="product-details">
-								<h6>CHÚA TỂ CỦA NHỮNG CHIẾC NHẪN</h6>
+								<h6>HAI SỐ PHẬN</h6>
 								<div class="price">
-									<h6>299.000 vnd</h6>
-									<h6 class="l-through">299.000 vnd</h6>
+									<h6>89.000 vnd</h6>
+									<h6 class="l-through">109.000 vnd</h6>
 								</div>
 								<div class="prd-bottom">
 									<a href="" class="social-info"> <span class="ti-bag"></span>

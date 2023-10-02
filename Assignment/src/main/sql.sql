@@ -73,7 +73,6 @@ go
 create table Orders(
 	id int not null identity(1,1) primary key,
 	orderDate Date not null default getdate(),
-	fullname nvarchar(100) not null,
 	phone int not null,
 	accountID int not null
 )

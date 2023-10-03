@@ -51,9 +51,9 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-7">
+							<div class="col-lg-7 d-flex align-items-center justify-content-center" style="height: 635px;">
 								<div class="banner-img">
-									<img class="img-fluid" src="${path}/img/category/lich-su-the-gioi.jpg" alt="">
+									<img class="img-fluid" src="${path}/img/category/lich-su-the-gioi.jpg" alt="" style="height: 500px; width: auto;">
 								</div>
 							</div>
 						</div>
@@ -76,9 +76,9 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-7">
+							<div class="col-lg-7 d-flex align-items-center justify-content-center" style="height: 635px;">
 								<div class="banner-img">
-									<img class="img-fluid" src="${path}/img/category/doi-gio-hu.jpg" alt="">
+									<img class="img-fluid" src="${path}/img/category/doi-gio-hu.jpg" alt="" style="height: 500px; width: auto;">
 								</div>
 							</div>
 						</div>

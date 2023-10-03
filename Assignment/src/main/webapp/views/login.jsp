@@ -73,7 +73,8 @@
 								</div>
 							</div>
 							<div class="col-md-12 form-group">
-								<button type="submit" value="submit" class="primary-btn">Đăng nhập</button>
+								<!-- Nhớ chỉnh lại chỗ này khi code -->
+								<button type="submit" value="submit" class="primary-btn" formaction="/admin" formmethod="get">Đăng nhập</button>
 								<a href="/user/forgotpassword">Quên mật khẩu?</a>
 							</div>
 						</form>

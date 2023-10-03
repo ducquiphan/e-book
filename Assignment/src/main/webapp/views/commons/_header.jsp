@@ -13,7 +13,7 @@
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<a class="navbar-brand logo_h" href="/home"><img
-						src="${path}/img/logo.png" alt=""></a>
+						src="${path}/img/banner/logo.jpg" alt="" style="width: 150px;"></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarSupportedContent"
 						aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -87,7 +87,7 @@
 			<div class="container">
 				<form class="d-flex justify-content-between">
 					<input type="text" class="form-control" id="search_input"
-						placeholder="Search Here">
+						placeholder="Tìm Kiếm...">
 					<button type="submit" class="btn"></button>
 					<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
 				</form>

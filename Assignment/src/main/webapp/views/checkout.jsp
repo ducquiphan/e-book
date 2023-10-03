@@ -58,15 +58,15 @@
                     <div class="col-lg-8">
                         <h3>Chi tiết hóa đơn</h3>
                         <form class="row contact_form" action="#" method="post" novalidate="novalidate">
-                            <div class="col-md-6 form-group p_star">
+                            <div class="col-12 form-group p_star">
                                 <input type="text" class="form-control" id="fullname" name="fullname">
                                 <span class="placeholder" data-placeholder="Họ và tên"></span>
                             </div>
-                            <div class="col-md-6 form-group p_star">
+                            <div class="col-12 form-group p_star">
                                 <input type="text" class="form-control" id="number" name="phone">
                                 <span class="placeholder" data-placeholder="Số điện thoại"></span>
                             </div>
-                            <div class="col-md-6 form-group p_star">
+                            <div class="col-12 form-group p_star">
                                 <input type="text" class="form-control" id="email" name="email">
                                 <span class="placeholder" data-placeholder="Địa chỉ email"></span>
                             </div>

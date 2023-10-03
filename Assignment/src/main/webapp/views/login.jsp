@@ -51,7 +51,7 @@
 						<img class="img-fluid" src="${path}/img/login.jpg" alt="">
 						<div class="hover">
 							<h4>Thành viên mới?</h4>
-							<p>Hãy nhanh tróng trở thành thành viên để được thưởng thức những đầu sách ấn tượng</p>
+							<p>Hãy nhanh chóng trở thành thành viên để được thưởng thức những đầu sách ấn tượng</p>
 							<a class="primary-btn" href="/user/registration">Tạo tài khoản</a>
 						</div>
 					</div>

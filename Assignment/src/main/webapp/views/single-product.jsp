@@ -75,7 +75,7 @@
 							your interior look awesome, and at the same time give you the
 							pleasant warm feeling during the winter.</p>
 						<div class="product_count">
-							<label for="qty">Quantity:</label> <input type="text" name="qty"
+							<label for="qty">Số Lượng:</label> <input type="text" name="qty"
 								id="sst" maxlength="12" value="1" title="Quantity:"
 								class="input-text qty">
 							<button
@@ -103,7 +103,7 @@
 	<section class="product_description_area">
 		<div class="container">
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
-				<li class="nav-item"><a class="nav-link" id="home-tab"
+				<li class="nav-item"><a class="nav-link active" id="home-tab"
 					data-toggle="tab" href="#home" role="tab" aria-controls="home"
 					aria-selected="true">Giới thiệu</a></li>
 				<li class="nav-item"><a class="nav-link" id="profile-tab"
@@ -112,12 +112,12 @@
 				<li class="nav-item"><a class="nav-link" id="contact-tab"
 					data-toggle="tab" href="#contact" role="tab"
 					aria-controls="contact" aria-selected="false">Bình luận</a></li>
-				<li class="nav-item"><a class="nav-link active" id="review-tab"
+				<li class="nav-item"><a class="nav-link " id="review-tab"
 					data-toggle="tab" href="#review" role="tab" aria-controls="review"
 					aria-selected="false">Nhận xét</a></li>
 			</ul>
 			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade" id="home" role="tabpanel"
+				<div class="tab-pane fade show active" id="home" role="tabpanel"
 					aria-labelledby="home-tab">
 					<p>Beryl Cook is one of Britain’s most talented and amusing
 						artists .Beryl’s pictures feature women of all shapes and sizes
@@ -265,7 +265,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="tab-pane fade show active" id="review" role="tabpanel"
+				<div class="tab-pane fade" id="review" role="tabpanel"
 					aria-labelledby="review-tab">
 					<div class="row">
 						<div class="col-lg-6">
@@ -383,8 +383,7 @@
 										</div>
 									</div>
 									<div class="col-md-12 text-right">
-										<button type="submit" value="submit" class="primary-btn">Submit
-											Now</button>
+										<button type="submit" value="submit" class="primary-btn">Nhận Xét Ngay</button>
 									</div>
 								</form>
 							</div>

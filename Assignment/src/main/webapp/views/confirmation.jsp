@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="../views/commons/_taglib.jsp" %>
+<%@include file="../views/commons/_taglib.jsp"%>
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
 <!-- Mobile Specific Meta -->
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Favicon-->
 <link rel="shortcut icon" href="../views/img/fav.png">
 <!-- Author Meta -->
@@ -18,18 +19,19 @@
 <meta charset="UTF-8">
 <!-- Site Title -->
 <title>Book Shop</title>
-<%@include file="../views/commons/_head.jsp" %>
+<%@include file="../views/commons/_head.jsp"%>
 </head>
 
 <body>
 	<!-- Start Header Area -->
-	<%@include file="../views/commons/_header.jsp" %>
+	<%@include file="../views/commons/_header.jsp"%>
 	<!-- End Header Area -->
-	
+
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
-			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+			<div
+				class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
 					<h1>Xác nhận đơn hàng</h1>
 					<nav class="d-flex align-items-center">
@@ -45,19 +47,31 @@
 	<!--================Order Details Area =================-->
 	<section class="order_details section_gap">
 		<div class="container">
-			<h3 class="title_confirmation">Cám ơn bạn vì đã chọn chúng tôi. Đơn hàng của bạn đã được xác nhận.</h3>
+			<h3 class="title_confirmation">Cám ơn bạn vì đã chọn chúng tôi.
+				Đơn hàng của bạn đã được xác nhận.</h3>
 			<div class="order_d_inner">
 				<div class="">
 					<div class="details_item">
 
 						<h4>Thông tin đơn hàng</h4>
-						<ul class="list">
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Mã đơn</span>: 1</a></li>
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Ngày đặt</span>: 1/10/2023</a></li>
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Tổng tiền</span>: 500.000 VND</a></li>
-							<li><a href="#" class="pe-none" tabindex="-1" aria-disabled="true"><span>Phương pháp thanh toán</span>: Paypal</a></li>
-
-						</ul>
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">Mã Đơn</th>
+									<th scope="col">Ngày Đặt</th>
+									<th scope="col">Tổng Tiền</th>
+									<th scope="col">Phương Pháp Thanh Toán</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>1/10/2023</td>
+									<td>500.000vnd</td>
+									<td>Paypal</td>
+								</tr>								
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -75,13 +89,13 @@
 						<tbody>
 							<tr>
 								<td>
-									<p>Pixelstore fresh Blackberry</p>
+									<p>Nhà Giả Kim</p>
 								</td>
 								<td>
 									<h5>x 02</h5>
 								</td>
 								<td>
-									<p>$720.00</p>
+									<p>500.000 vnd</p>
 								</td>
 							</tr>
 						</tbody>
@@ -93,8 +107,8 @@
 	<!--================End Order Details Area =================-->
 
 	<!-- Start footer Area -->
-	<%@include file="../views/commons/_footer.jsp" %>
+	<%@include file="../views/commons/_footer.jsp"%>
 	<!-- End footer Area -->
-	<%@include file="../views/commons/_jsFiles.jsp" %>
+	<%@include file="../views/commons/_jsFiles.jsp"%>
 </body>
 </html>

@@ -61,15 +61,15 @@
                                 <td>
                                     <div class="media">
                                         <div class="d-flex">
-                                            <img src="${path}/img/cart.jpg" alt="">
+                                            <img src="${path}/img/category/tram-nam-nhin-lai.jpg" alt="" style="height: 150px; width: auto">
                                         </div>
                                         <div class="media-body">
-                                            <p>Minimalistic shop for multipurpose use</p>
+                                            <p>TRĂM NĂM NHÌN LẠI</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <h5>$360.00</h5>
+                                    <h5>150.000 VND</h5>
                                 </td>
                                 <td>
                                     <div class="product_count">
@@ -82,7 +82,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <h5>$720.00</h5>
+                                    <h5>150.000 VND</h5>
                                 </td>
                             </tr>
                             <tr class="bottom_button">
@@ -114,7 +114,7 @@
                                     <h5>Tổng tiền</h5>
                                 </td>
                                 <td>
-                                    <h5>$2160.00</h5>
+                                    <h5>150.000 VND</h5>
                                 </td>
                             </tr>
                             <tr class="out_button_area">

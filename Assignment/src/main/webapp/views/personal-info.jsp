@@ -54,8 +54,8 @@
 						<tbody>
 							<tr>
 								<td colspan="2"><img
-									src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-									class="rounded-circle" style="width: 150px;" alt="Avatar" /></td>
+									src="${path}/img/category/nhagiakim_3.jpg"
+									class="rounded-circle" style="width: 150px; height: 140px;" alt="Avatar" /></td>
 							</tr>
 							<tr>
 								<td>

@@ -164,7 +164,7 @@
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="${path}/img/category/su-song-bat-tu.jpg"
 									alt=""> <a href=""
-									class="" target="_blank">
+									class="" target="">
 									<div class="deal-details">
 										<h6 class="deal-title">Tâm Lý, Tâm Linh, Tôn Giáo</h6>
 									</div>
@@ -176,7 +176,7 @@
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="${path}/img/category/doi-gio-hu.jpg"
 									alt=""> <a href="" class=""
-									target="_blank">
+									target="">
 									<div class="deal-details">
 										<h6 class="deal-title">Văn Học Nghệ Thuật</h6>
 									</div>
@@ -188,7 +188,7 @@
 								<div class="overlay"></div>
 								<img class="img-fluid w-100" src="${path}/img/category/luoc-su-thoi-gian.jpg"
 									alt=""> <a href=""
-									class="" target="_blank">
+									class="" target="">
 									<div class="deal-details">
 										<h6 class="deal-title">Văn Hóa Xã Hội-Lịch Sử</h6>
 									</div>

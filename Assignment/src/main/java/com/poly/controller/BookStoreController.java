@@ -30,4 +30,5 @@ public class BookStoreController {
 	public String getContact() {
 		return "contact";
 	}
+	
 }

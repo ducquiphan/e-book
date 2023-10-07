@@ -20,5 +20,5 @@ public class OrderController {
 	@GetMapping("/user/orders")
 	public String getUserOrders() {
 		return "my-orders";
-	}
+	}	
 }

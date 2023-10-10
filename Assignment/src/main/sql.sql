@@ -4,10 +4,9 @@ use java5
 go
 create table Account(
 	id int not null primary key identity(1,1),
-	username varchar(20) not null unique,
+	email varchar(255) not null unique,
 	password varchar(20) not null,
 	fullname nvarchar(100) not null,
-	email varchar(255) not null unique,
 	avatar nvarchar(255) not null
 )
 go

@@ -42,7 +42,7 @@ public class UserController {
 	}
 	@PostMapping("/MyProduct")
 	public String getMyProduct() {
-		return "MyProduct";
+		return "my-bookshelf";
 	}
 	
 	@GetMapping("/changepassword")

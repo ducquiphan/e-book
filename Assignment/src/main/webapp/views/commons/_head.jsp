@@ -1,3 +1,6 @@
+
+<!-- Favicon-->
+<link rel="shortcut icon" href="${path}/img/banner/logo.jpg">
 <!--
 		CSS
 	============================================= -->

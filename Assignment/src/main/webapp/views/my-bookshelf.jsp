@@ -52,14 +52,14 @@
 						<div class="hover">
 							<h4>Thành Viên Mới</h4>
 							<p>Hãy nhanh chóng trở thành thành viên để được thưởng thức những đầu sách ấn tượng</p>
-							<a class="primary-btn" href="registration.html">Tạo tài khoản</a>
+							<a class="primary-btn" href="/user/registration">Tạo tài khoản</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="login_form_inner">
 						<h3>Đăng Nhập Để Vào</h3>
-						<form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+						<form class="row login_form" action="/user/MyProduct" method="post" id="contactForm" novalidate="novalidate">
 							<div class="col-md-12 form-group">
 								<input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên Đăng Nhập'">
 							</div>

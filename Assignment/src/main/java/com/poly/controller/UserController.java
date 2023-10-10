@@ -40,6 +40,10 @@ public class UserController {
 	public String getUserBookshelf() {
 		return "my-bookshelf";
 	}
+	@PostMapping("/MyProduct")
+	public String getMyProduct() {
+		return "MyProduct";
+	}
 	
 	@GetMapping("/changepassword")
 	public String getChangePassword() {

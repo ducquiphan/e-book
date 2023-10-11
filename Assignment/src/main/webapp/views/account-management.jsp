@@ -56,8 +56,8 @@
                                     <div class="basic-form">
                                         <form>
                                             <div class="form-group">
-                                                <label>Tên tài khoản</label>
-                                                <input type="text" name="username" class="form-control input-default" placeholder="Tên tài khoản">
+                                                <label>Email</label>
+                                                <input type="text" name="email" class="form-control input-default" placeholder="Email">
                                             </div>
                                             <div class="form-group">
                                                 <label>Mật khẩu</label>
@@ -66,10 +66,6 @@
                                             <div class="form-group">
                                                 <label>Họ và tên</label>
                                                 <input type="text" name="fullname" class="form-control input-default" placeholder="Họ và tên">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Email</label>
-                                                <input type="text" name="email" class="form-control input-default" placeholder="Email">
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label class="">Ảnh đại diện</label>
@@ -117,10 +113,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>Mã</th>
-                                                    <th>Tên tài khoản</th>
+                                                    <th>Email</th>
                                                     <th>Mật khẩu</th>
                                                     <th>Họ và tên</th>
-                                                    <th>Email</th>
                                                     <th>Ảnh đại diện</th>
                                                     <th>Trạng thái</th>
                                                     <th></th>
@@ -129,32 +124,11 @@
                                             <tbody>
                                                 <tr>
                                                     <th scope="row">1</th>
-                                                    <td>phanquiduc</td>
+                                                    <td>ducpqps25526@fpt.edu.vn</td>
                                                     <td><span class="badge badge-danger">*****</span></td>
                                                     <td>Phan Quí Đức</td>
-                                                    <td>ducpqps25526@fpt.edu.vn</td>
                                                     <td>ducphan.jpg</td>
                                                     <td><span class="badge badge-danger">Vô hiệu hóa</span></td>
-                                                    <td><a href="">Chỉnh sửa</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>phandanglong</td>
-                                                    <td><span class="badge badge-danger">*****</span></td>
-                                                    <td>Phan Đăng Long</td>
-                                                    <td>longpd25821@fpt.edu.vn</td>
-                                                    <td>longdang.jpg</td>
-                                                    <td><span class="badge badge-success">Có hiệu lực</span></td>
-                                                    <td><a href="">Chỉnh sửa</a></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>phamquynhnhu</td>
-                                                    <td><span class="badge badge-danger">*****</span></td>
-                                                    <td>Phạm Quỳnh Như</td>
-                                                    <td>ducpqps25526@fpt.edu.vn</td>
-                                                    <td>quynhnhu.jpg</td>
-                                                    <td><span class="badge badge-success">Có hiệu lực</span></td>
                                                     <td><a href="">Chỉnh sửa</a></td>
                                                 </tr>
                                             </tbody>

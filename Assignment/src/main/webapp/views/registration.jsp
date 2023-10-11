@@ -6,8 +6,6 @@
 <head>
 <!-- Mobile Specific Meta -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Favicon-->
-<link rel="shortcut icon" href="../views/img/fav.png">
 <!-- Author Meta -->
 <meta name="author" content="CodePixar">
 <!-- Meta Description -->
@@ -61,7 +59,7 @@
 						<h3>Đăng ký</h3>
 						<form class="row login_form" action="" method="post" id="contactForm" >
 							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="username" name="username" placeholder="Tên đăng nhập" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên đăng nhập'">
+								<input type="text" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
 							</div>
 							<div class="col-md-12 form-group">
 								<input type="text" class="form-control" id="fullname" name="fullname" placeholder="Họ và tên" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Họ và tên'">
@@ -71,9 +69,6 @@
 							</div>
 							<div class="col-md-12 form-group">
 								<input type="password" class="form-control" id="passwordConfirmation" name="passwordConfirmation" placeholder="Xác nhận mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Xác nhận mật khẩu'">
-							</div>
-							<div class="col-md-12 form-group">
-								<input type="text" class="form-control" id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
 							</div>
 							<div class="col-md-12 form-group">
 								<button type="submit" value="submit" class="primary-btn">Đăng ký</button>

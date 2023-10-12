@@ -24,7 +24,7 @@ import lombok.Data;
 public class Admin implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
+	Integer id;
 
 	@NotBlank
 	String username;
@@ -43,7 +43,7 @@ public class Admin implements Serializable {
 	String phone;
 
 	@Temporal(TemporalType.DATE)
-	@Column(name = "Birthday")
+	@Column(name = "birthday")
 	Date birthday = new Date();
 
 	@NotBlank
@@ -52,4 +52,5 @@ public class Admin implements Serializable {
 	@NotBlank
 	String avatar;
 
+	Boolean isActiveBoolean = true;
 }

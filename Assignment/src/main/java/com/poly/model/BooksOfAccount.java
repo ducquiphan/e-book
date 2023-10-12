@@ -14,10 +14,10 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "BookOfAccount")
+@Table(name = "BooksOfAccount")
 public class BooksOfAccount implements Serializable{
 	@Id
-	int id;
+	Long id;
 	
 	@NotNull
 	@ManyToOne
@@ -26,10 +26,11 @@ public class BooksOfAccount implements Serializable{
 	
 	@NotNull
 	@ManyToOne
-	@JoinColumn(name = "bookId")
+	@JoinColumn(name = "bookID")
 	Book book;
 	
-	Double progress;
+	Double progress = 0.0;
 	
+	Boolean isActive = true;
 	
 }

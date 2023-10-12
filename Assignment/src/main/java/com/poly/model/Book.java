@@ -22,17 +22,18 @@ import lombok.Data;
 public class Book implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
+	Integer id;
 	
 	@NotNull
 	String title;
 	
 	@NotNull
 	@Min(0)
-	Float price;
+	Double price;
 	
 	@NotNull
-	int qty;
+	@Min(1)
+	Integer qty;
 	
 	@NotBlank
 	String introduction;
@@ -62,5 +63,7 @@ public class Book implements Serializable{
 	List<BooksOfAccount> booksOfAccount;
 	
 	@OneToMany(mappedBy = "book")
-	List<OrderDetail> orderdetail;
+	List<OrderDetail> orderDetails;
+	
+	Boolean isActive = true;
 }

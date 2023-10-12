@@ -18,11 +18,13 @@ import lombok.Data;
 public class Publisher implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
+	Integer id;
 	
 	@NotBlank
 	String name;
 	
 	@OneToMany(mappedBy = "publisher")
 	List<Book> book;
+	
+	Boolean isActive = true;
 }

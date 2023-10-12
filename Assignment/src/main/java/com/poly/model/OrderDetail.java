@@ -20,14 +20,15 @@ import lombok.Data;
 public class OrderDetail implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
+	Long id;
 	
 	@NotNull
-	int qty;
+	@Min(1)
+	Integer qty;
 	
 	@NotNull
 	@Min(0)
-	Float price;
+	Double price;
 	
 	@NotNull
 	@ManyToOne
@@ -37,6 +38,7 @@ public class OrderDetail implements Serializable{
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "orderID")
-	Orders orders;
+	Orders order;
 	
+	Boolean isActive = true;
 }

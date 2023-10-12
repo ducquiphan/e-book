@@ -26,7 +26,7 @@ import lombok.Data;
 public class Orders implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
+	Integer id;
 	
 	@NotNull
 	@ManyToOne
@@ -37,9 +37,9 @@ public class Orders implements Serializable{
 	String phone;
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "OrdrerDate")
+	@Column(name = "orderDate")
 	Date orderDate = new Date();
 	
-	@OneToMany(mappedBy = "orders")
-	List<OrderDetail> orderdetail;
+	@OneToMany(mappedBy = "order")
+	List<OrderDetail> orderDetails;
 }

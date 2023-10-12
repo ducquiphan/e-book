@@ -13,6 +13,7 @@ import jakarta.persistence.UniqueConstraint;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Builder.Default;
 import lombok.Data;
 
 @Data
@@ -21,18 +22,25 @@ import lombok.Data;
 public class Account implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
+	Integer id;
+	
 	@Email
 	@NotBlank
 	String email;
+	
 	@NotBlank
 	String password;
+	
 	@NotBlank
 	String fullname;
+	
 	@NotBlank
 	String avatar;
+	
 	@OneToMany(mappedBy = "account")
 	List<BooksOfAccount> booksOfAccount;
+	
 	@OneToMany(mappedBy = "account")
 	List<Orders> orders;
+
 }

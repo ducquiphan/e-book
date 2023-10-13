@@ -17,20 +17,20 @@ import lombok.Data;
 @Table(name = "BooksOfAccount")
 public class BooksOfAccount implements Serializable{
 	@Id
-	Long id;
+	private Long id;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "accountID")
-	Account account;
+	private Account account;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "bookID")
-	Book book;
+	private Book book;
 	
-	Double progress = 0.0;
+	private Double progress = 0.0;
 	
-	Boolean isActive = true;
+	private Boolean isActive = true;
 	
 }

@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.poly.DAO.AccountDAO;
+import com.poly.dao.AccountDAO;
 import com.poly.model.Account;
+import com.poly.model.BooksOfAccount;
 
 /**
  * 
@@ -22,17 +23,11 @@ import com.poly.model.Account;
 @RequestMapping("/admin")
 public class AdminController {
 	@Autowired 
-	AccountDAO accountdao;
+	AccountDAO accountDAO;
 	
 	@GetMapping("")
 	public String getIndex() {
 		return "index-admin";
-	}
-	@ResponseBody
-	@RequestMapping("/demo")
-	public String demo() {
-		 
-		return accountdao.findAll().get(1).toString();
 	}
 	@PostMapping("")
 	public String postIndex() {

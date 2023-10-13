@@ -20,25 +20,25 @@ import lombok.Data;
 public class OrderDetail implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	private Long id;
 	
 	@NotNull
 	@Min(1)
-	Integer qty;
+	private Integer qty;
 	
 	@NotNull
 	@Min(0)
-	Double price;
+	private Double price;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "bookID")
-	Book book;
+	private Book book;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "orderID")
-	Orders order;
+	private Orders order;
 	
-	Boolean isActive = true;
+	private Boolean isActive = true;
 }

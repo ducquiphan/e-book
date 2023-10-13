@@ -1,4 +1,4 @@
-package com.poly.DAO;
+package com.poly.dao;
 
 import java.util.List;
 

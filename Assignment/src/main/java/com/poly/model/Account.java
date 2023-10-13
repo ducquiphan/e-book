@@ -23,27 +23,27 @@ import lombok.Data;
 public class Account implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	private Integer id;
 	
 	@Email
 	@NotBlank
-	String email;
+	private String email;
 	
 	@NotBlank
-	String password;
+	private String password;
 	
 	@NotBlank
-	String fullname;
+	private String fullname;
 	
 	@NotBlank
-	String avatar;
+	private String avatar;
 	
 	@OneToMany(mappedBy = "account")
-	List<BooksOfAccount> booksOfAccount;
+	private List<BooksOfAccount> booksOfAccount;
 	
 	@OneToMany(mappedBy = "account")
-	List<Orders> orders;
+	private List<Orders> orders;
 	
-	Boolean isActive = true;
+	private Boolean isActive = true;
 
 }

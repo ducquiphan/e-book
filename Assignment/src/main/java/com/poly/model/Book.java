@@ -22,48 +22,48 @@ import lombok.Data;
 public class Book implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	private Integer id;
 	
 	@NotNull
-	String title;
+	private String title;
 	
 	@NotNull
 	@Min(0)
-	Double price;
+	private Double price;
 	
 	@NotNull
 	@Min(1)
-	Integer qty;
+	private Integer qty;
 	
 	@NotBlank
-	String introduction;
+	private String introduction;
 	
 	@NotBlank
-	String picturePath;
+	private String picturePath;
 	
 	@NotBlank
-	String contentPath;
+	private String contentPath;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "authorId")
-	Author author;
+	private Author author;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "categoryId")
-	Category category;
+	private Category category;
 	
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "publisherId")
-	Publisher publisher;
+	private Publisher publisher;
 	
 	@OneToMany(mappedBy = "book")
-	List<BooksOfAccount> booksOfAccount;
+	private List<BooksOfAccount> booksOfAccount;
 	
 	@OneToMany(mappedBy = "book")
-	List<OrderDetail> orderDetails;
+	private List<OrderDetail> orderDetails;
 	
-	Boolean isActive = true;
+	private Boolean isActive = true;
 }

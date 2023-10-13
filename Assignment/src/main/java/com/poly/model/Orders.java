@@ -42,4 +42,6 @@ public class Orders implements Serializable{
 	
 	@OneToMany(mappedBy = "order")
 	List<OrderDetail> orderDetails;
+	
+	Boolean isActive = true;
 }

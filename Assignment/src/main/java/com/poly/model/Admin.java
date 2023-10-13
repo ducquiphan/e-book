@@ -24,33 +24,33 @@ import lombok.Data;
 public class Admin implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer id;
+	private Integer id;
 
 	@NotBlank
-	String username;
+	private String username;
 
 	@NotBlank
-	String password;
+	private String password;
 
 	@NotBlank
-	String fullname;
+	private String fullname;
 
 	@Email
 	@NotBlank
-	String email;
+	private String email;
 
 	@NotBlank
-	String phone;
+	private String phone;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "birthday")
-	Date birthday = new Date();
+	private Date birthday = new Date();
 
 	@NotBlank
-	String identityNumber;
+	private String identityNumber;
 
 	@NotBlank
-	String avatar;
+	private String avatar;
 
-	Boolean isActiveBoolean = true;
+	private Boolean isActive = true;
 }

@@ -3,10 +3,17 @@
  */
 package com.poly.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.poly.DAO.AccountDAO;
+import com.poly.model.Account;
 
 /**
  * 
@@ -14,11 +21,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	@Autowired 
+	AccountDAO accountdao;
+	
 	@GetMapping("")
 	public String getIndex() {
 		return "index-admin";
 	}
-	
+	@ResponseBody
+	@RequestMapping("/demo")
+	public String demo() {
+		 
+		return accountdao.findAll().get(1).toString();
+	}
 	@PostMapping("")
 	public String postIndex() {
 		return "index-admin";

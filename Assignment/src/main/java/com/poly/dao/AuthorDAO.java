@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.poly.model.Author;
+import com.poly.entity.Author;
 
 public interface AuthorDAO extends JpaRepository<Author, Integer>{
 	@Override

@@ -1,4 +1,4 @@
-package com.poly.model;
+package com.poly.entity;
 
 import java.io.Serializable;
 import java.util.List;
@@ -14,8 +14,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Category")
-public class Category implements Serializable {
+@Table(name = "Author")
+public class Author implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -23,7 +23,7 @@ public class Category implements Serializable {
 	@NotBlank
 	private String name;
 	
-	@OneToMany(mappedBy = "category")
+	@OneToMany(mappedBy = "author")
 	private List<Book> books;
 	
 	private Boolean isActive = true;

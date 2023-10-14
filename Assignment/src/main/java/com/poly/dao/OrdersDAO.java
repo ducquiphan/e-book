@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.poly.model.Orders;
+import com.poly.entity.Orders;
 
 public interface OrdersDAO extends JpaRepository<Orders, Integer>{
 	@Override

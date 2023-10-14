@@ -14,8 +14,8 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.poly.entity.MailInfo;
-import com.poly.utils.MailerService;
+import com.poly.model.MailInfo;
+import com.poly.service.MailService;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -24,7 +24,7 @@ import jakarta.mail.internet.MimeMessage;
  * 
  */
 @Service
-public class MailerServiceImpl implements MailerService {
+public class MailServiceImpl implements MailService {
 	@Autowired
 	JavaMailSender sender;
 	List<MailInfo> list = new ArrayList<>();

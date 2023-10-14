@@ -13,7 +13,7 @@ import jakarta.mail.MessagingException;
 /**
  * 
  */
-public interface MailerService {
+public interface MailService {
 	/**
 	 * Gửi email
 	 * 

@@ -1,4 +1,4 @@
-package com.poly.model;
+package com.poly.entity;
 
 import java.io.Serializable;
 import java.util.List;

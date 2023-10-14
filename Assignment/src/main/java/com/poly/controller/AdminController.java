@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.poly.dao.AccountDAO;
-import com.poly.model.Account;
-import com.poly.model.BooksOfAccount;
+import com.poly.entity.Account;
+import com.poly.entity.BooksOfAccount;
 
 /**
  * 

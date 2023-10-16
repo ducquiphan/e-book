@@ -12,4 +12,7 @@ public interface CategoryDAO extends JpaRepository<Category, Integer>{
 	@Override
 	@Query("select o from Category o where o.isActive = true")
 	List<Category> findAll();
+	
+	List<Category> findByName(String name);
+	
 }

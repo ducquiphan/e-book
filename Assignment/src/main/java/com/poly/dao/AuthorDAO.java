@@ -12,4 +12,6 @@ public interface AuthorDAO extends JpaRepository<Author, Integer>{
 	@Override
 	@Query("select o from Author o where o.isActive = true")
 	List<Author> findAll();
+	
+	List<Author> findByName(String name);
 }

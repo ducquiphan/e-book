@@ -3,6 +3,12 @@ package com.poly.entity;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.poly.validator.IdentityNumber;
+import com.poly.validator.Phone;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,15 +44,18 @@ public class Admin implements Serializable {
 	@Email
 	@NotBlank
 	private String email;
-
+	
+	@Phone
 	@NotBlank
 	private String phone;
 
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "birthday")
 	private Date birthday = new Date();
 
 	@NotBlank
+	@IdentityNumber
 	private String identityNumber;
 
 	@NotBlank

@@ -19,6 +19,6 @@ public class InterConfig implements WebMvcConfigurer{
 //		.addPathPatterns("/category/**","/mail/**","/product/**")
 //		.excludePathPatterns("/product/search-name","/product/search-price");
 		
-		registry.addInterceptor(globalInterceptor).excludePathPatterns("/user/login", "/user/logout", "/admin/**");
+		registry.addInterceptor(globalInterceptor);
 	}
 }

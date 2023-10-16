@@ -95,7 +95,7 @@
 												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management">Mới</button>
 												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/create">Thêm</button>
 												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/update" onclick="return confirmSubmit()">Sửa</button>
-												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/delete">Xóa</button>
+												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/delete" onclick="return confirmSubmit()">Xóa</button>
 											</div>
 										</form:form>
 

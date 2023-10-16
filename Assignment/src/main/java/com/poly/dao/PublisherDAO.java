@@ -12,4 +12,7 @@ public interface PublisherDAO extends JpaRepository<Publisher, Integer>{
 	@Override
 	@Query("select o from Publisher o where o.isActive = true")
 	List<Publisher> findAll();
+	
+	List<Publisher> findByName(String name);
+	
 }

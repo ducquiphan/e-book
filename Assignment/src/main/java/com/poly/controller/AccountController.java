@@ -59,7 +59,7 @@ public class AccountController {
 						
 					} else {
 						dao.save(account);
-						model.addAttribute("message", "Tạo thành công!");
+						model.addAttribute("message", "Thêm mới thành công!");
 					}
 				} catch (IOException e) {
 					// TODO Auto-generated catch block

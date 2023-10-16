@@ -22,14 +22,14 @@
                     <li><a class="sidebar-sub-toggle"><i class="ti-view-list-alt"></i> Dữ liệu <span
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                 <ul>
-                    <li><a href="/admin/adminManagement">Quản trị viên</a></li>
+                    <li><a href="/admin/admin-management">Quản trị viên</a></li>
                     <li><a href="/admin/account-management">Người dùng</a></li>
-                    <li><a href="/admin/categoryManagement">Nhóm sách</a></li>
-                    <li><a href="/admin/authorManagement">Tác giả</a></li>
-                    <li><a href="/admin/publisherManagement">Nhà xuất bản</a></li>
-                    <li><a href="/admin/bookManagement">Sách</a></li>
-                    <li><a href="/admin/booksOfAccountManagement">Sách của người dùng</a></li>
-                    <li><a href="/admin/ordersManagement">Đơn hàng</a></li>
+                    <li><a href="/admin/category-management">Nhóm sách</a></li>
+                    <li><a href="/admin/author-management">Tác giả</a></li>
+                    <li><a href="/admin/publisher-management">Nhà xuất bản</a></li>
+                    <li><a href="/admin/book-management">Sách</a></li>
+                    <li><a href="/admin/books-of-account-management">Sách của người dùng</a></li>
+                    <li><a href="/admin/orders-management">Đơn hàng</a></li>
                 </ul>
             </li>
                     <li class="label">Extra</li>

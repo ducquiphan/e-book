@@ -16,6 +16,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Builder.Default;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
@@ -36,7 +37,7 @@ public class Account implements Serializable {
 	private String fullname;
 	
 	@NotBlank
-	private String avatar;
+	private String avatar = "avatar.jpg";
 	
 	@OneToMany(mappedBy = "account")
 	private List<BooksOfAccount> booksOfAccount;

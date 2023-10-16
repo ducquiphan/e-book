@@ -55,40 +55,50 @@
 								</div>
 								<div class="card-body">
 									<div class="basic-form">
-										<form>
+										<form:form id="form" action="/admin/account-management" method="post" enctype="multipart/form-data"
+											modelAttribute="account">
+											<label class="mb-3">${message}</label>
 											<div class="form-group">
-												<label>Email</label> <input type="text" name="email" class="form-control input-default" placeholder="Email">
+												<label>Email</label>
+												<form:input path="email" type="text" class="form-control input-default" placeholder="Email" />
+												<form:errors path="email" cssClass="form-text text-danger" />
 											</div>
 											<div class="form-group">
-												<label>Mật khẩu</label> <input type="password" name="password" class="form-control input-default"
-													placeholder="Mật khẩu">
+												<label>Mật khẩu</label>
+												<form:password class="form-control input-default" placeholder="Mật khẩu" path="password" showPassword="true" />
+												<form:errors path="password" cssClass="form-text text-danger" />
 											</div>
 											<div class="form-group">
-												<label>Họ và tên</label> <input type="text" name="fullname" class="form-control input-default"
-													placeholder="Họ và tên">
+												<label>Họ và tên</label>
+												<form:input path="fullname" type="text" class="form-control input-default" placeholder="Họ và tên" />
+												<form:errors path="fullname" cssClass="form-text text-danger" />
 											</div>
 											<div class="form-group mb-3">
-												<label class="">Ảnh đại diện</label> <input type="file" class="form-control input-group-default">
+												<label class="">Ảnh đại diện</label> <input name="file" type="file" class="form-control input-group-default"
+													accept="image/*"> <label class="">${account.avatar}</label>
+												<form:hidden path="avatar" />
+												<form:errors path="avatar" class="form-text text-danger" />
 
 											</div>
 											<div class="form-group">
 												<label for="" class="mr-3">Trạng thái: </label>
 												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="isActive" id="inlineRadio1" value="true" checked="checked">
+													<form:radiobutton path="isActive" class="form-check-input" id="inlineRadio1" value="true" checked="checked" />
 													<label class="form-check-label" for="inlineRadio1">Có hiệu lực</label>
 												</div>
 												<div class="form-check form-check-inline">
-													<input class="form-check-input" type="radio" name="isActive" id="inlineRadio2" value="false"> <label
-														class="form-check-label" for="inlineRadio2">Vô hiệu hóa</label>
+													<form:radiobutton path="isActive" class="form-check-input" id="inlineRadio2" value="false" />
+													<label class="form-check-label" for="inlineRadio2">Vô hiệu hóa</label>
 												</div>
 											</div>
 											<div class="">
-												<button type="submit" class="btn btn-warning mr-2">Mới</button>
-												<button type="submit" class="btn btn-warning mr-2">Thêm</button>
-												<button type="submit" class="btn btn-warning mr-2">Sửa</button>
-												<button type="submit" class="btn btn-warning mr-2">Xóa</button>
+												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management">Mới</button>
+												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/create">Thêm</button>
+												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/update" onclick="return confirmSubmit()">Sửa</button>
+												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/delete">Xóa</button>
 											</div>
-										</form>
+										</form:form>
+
 									</div>
 								</div>
 							</div>
@@ -123,49 +133,53 @@
 													<th></th>
 												</tr>
 											</thead>
-											<c:forEach items="${page.content}" var="account"></c:forEach>
-											<tbody>
-												<tr>
-													<th scope="row">${account.id}</th>
-													<td>${account.email}</td>
-													<td><span class="badge badge-danger">******</span></td>
-													<td>${account.fullname}</td>
-													<td>${account.avatar}</td>
-													<c:if test="${account.isActive}">
-														<td><span class="badge badge-success">Đang hiệu lực</span></td>
-													</c:if>
-													<c:if test="${!account.isActive}">
-														<td><span class="badge badge-danger">Vô hiệu hóa</span></td>
-													</c:if>
-													<td><a href="/admin/account/managerment/edit?id=${account.id}">Chỉnh sửa</a></td>
-												</tr>
-											</tbody>
+											<c:forEach items="${page.content}" var="account">
+												<tbody>
+													<tr>
+														<th scope="row">${account.id}</th>
+														<td>${account.email}</td>
+														<td><span class="badge badge-danger">******</span></td>
+														<td>${account.fullname}</td>
+														<td><img class="img img-fluid" id="" alt="${account.avatar}" src="${path}/images/avatar/${account.avatar}"
+															height="50px" width="50px" /></td>
+														<c:if test="${account.isActive}">
+															<td><span class="badge badge-success">Đang hiệu lực</span></td>
+														</c:if>
+														<c:if test="${!account.isActive}">
+															<td><span class="badge badge-danger">Vô hiệu hóa</span></td>
+														</c:if>
+														<td><a href="/admin/account-management/edit?email=${account.email}"><i class="ti ti-pencil"></i></a></td>
+													</tr>
+												</tbody>
+											</c:forEach>
+
 										</table>
 										<nav aria-label="Page navigation example">
 											<ul class="pagination justify-content-center">
 												<c:if test="${page.number == 0}">
-													<li class="page-item disabled"><a href="/product/page?p=0" class="page-link"><i
-															class="bi bi-chevron-double-left"></i></a></li>
-													<li class="page-item disabled"><a href="/product/page?p=${page.number-1}" class="page-link" href="#"><i
-															class="bi bi-chevron-left"></i></a></li>
+													<li class="page-item disabled"><a href="/admin/account-management/page?p=0" class="page-link"><i
+															class="ti ti-angle-double-left"></i></a></li>
+													<li class="page-item disabled"><a href="/admin/account-management/page?p=0" class="page-link"><i
+															class="ti ti-angle-left"></i></a></li>
 												</c:if>
 												<c:if test="${page.number != 0}">
-													<li class="page-item"><a href="/product/page?p=0" class="page-link"><i class="bi bi-chevron-double-left"></i></a></li>
+													<li class="page-item"><a href="/admin/account-management/page?p=0" class="page-link"><i
+															class="ti ti-angle-double-left"></i></a></li>
 
-													<li class="page-item"><a href="/product/page?p=${page.number-1}" class="page-link" href="#"><i
-															class="bi bi-chevron-left"></i></a></li>
+													<li class="page-item"><a href="/admin/account-management/page?p=${page.number-1}" class="page-link" href="#"><i
+															class="ti ti-angle-left"></i></a></li>
 												</c:if>
 												<c:if test="${page.number == page.totalPages-1}">
-													<li class="page-item disabled"><a href="/product/page?p=${page.number+1}" class="page-link" href="#"><i
-															class="bi bi-chevron-right"></i></a></li>
-													<li class="page-item disabled"><a href="/product/page?p=${page.totalPages-1}" class="page-link" href="#"><i
-															class="bi bi-chevron-double-right"></i></a></li>
+													<li class="page-item disabled"><a href="/admin/account-management/page?p=${page.totalPages-1}"
+														class="page-link" href="#"><i class="ti ti-angle-right"></i></a></li>
+													<li class="page-item disabled"><a href="/admin/account-management/page?p=${page.totalPages-1}"
+														class="page-link" href="#"><i class="ti ti-angle-double-right"></i></a></li>
 												</c:if>
 												<c:if test="${page.number != page.totalPages-1}">
-													<li class="page-item"><a href="/product/page?p=${page.number+1}" class="page-link" href="#"><i
-															class="bi bi-chevron-right"></i></a></li>
-													<li class="page-item"><a href="/product/page?p=${page.totalPages-1}" class="page-link" href="#"><i
-															class="bi bi-chevron-double-right"></i></a></li>
+													<li class="page-item"><a href="/admin/account-management/page?p=${page.number+1}" class="page-link" href="#"><i
+															class="ti ti-angle-right"></i></a></li>
+													<li class="page-item"><a href="/admin/account-management/page?p=${page.totalPages-1}" class="page-link"
+														href="#"><i class="ti ti-angle-double-right"></i></a></li>
 												</c:if>
 											</ul>
 										</nav>
@@ -185,6 +199,17 @@
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		function confirmSubmit() {
+			var agree = confirm("Bạn có chắc chắn muốn thực hiện không? Hành động của bạn sẽ không thể làm lại.");
+			if (agree)
+				return true;
+			else
+				return false;
+		}
+	</script>
+
 
 	<%@ include file="../views/commons/_jsFiles-admin.jsp"%>
 </body>

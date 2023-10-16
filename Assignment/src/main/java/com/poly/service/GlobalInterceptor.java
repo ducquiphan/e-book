@@ -5,6 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.poly.Const;
+import com.poly.dao.AccountDAO;
+import com.poly.dao.AdminDAO;
 import com.poly.dao.AuthorDAO;
 import com.poly.dao.BookDAO;
 import com.poly.dao.BooksOfAccountDAO;
@@ -18,34 +21,76 @@ import com.poly.entity.Publisher;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-
 @Service
-public class GlobalInterceptor implements HandlerInterceptor{
-	
-//	@Autowired
-//	BookDAO bookDAO;
-//	@Autowired
-//	PublisherDAO publisherDAO;
-//	@Autowired
-//	CategoryDAO categoryDAO;
-//	@Autowired
-//	AuthorDAO authorDAO;
-	
-	
+public class GlobalInterceptor implements HandlerInterceptor {
+
+	@Autowired
+	AccountDAO accountDAO;
+	@Autowired
+	BookDAO bookDAO;
+	@Autowired
+	AdminDAO adminDAO;
+	@Autowired
+	AuthorDAO authorDAO;
+	@Autowired
+	BooksOfAccountDAO booksOfAccountDAO;
+	@Autowired
+	CategoryDAO categoryDAO;
+	@Autowired
+	OrderDetailDAO orderDetailDAO;
+	@Autowired
+	OrdersDAO ordersDAO;
+	@Autowired
+	PublisherDAO publisherDAO;
+	@Autowired
+	SessionService sessionService;
+
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		// TODO Auto-generated method stub
 		return true;
 	}
-	
+
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		// TODO Auto-generated method stub
-//		request.getSession().setAttribute("categories", categoryDAO.findAll());
-//		request.getSession().setAttribute("authors", authorDAO.findAll());
-//		request.getSession().setAttribute("publishers", publisherDAO.findAll());
-//		request.getSession().setAttribute("books", bookDAO.findAll());
+		if (sessionService.getAttribute(Const.ACCOUNTS) == null) {
+			sessionService.setAttribute(Const.ACCOUNTS, accountDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.ADMINS) == null) {
+			sessionService.setAttribute(Const.ADMINS, adminDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.AUTHORS) == null) {
+			sessionService.setAttribute(Const.AUTHORS, authorDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.BOOKS) == null) {
+			sessionService.setAttribute(Const.BOOKS, bookDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.BOOKS_OF_ACCOUNTS) == null) {
+			sessionService.setAttribute(Const.BOOKS_OF_ACCOUNTS, booksOfAccountDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.CATEGORIES) == null) {
+			sessionService.setAttribute(Const.CATEGORIES, categoryDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.ORDER_DETAILS) == null) {
+			sessionService.setAttribute(Const.ORDER_DETAILS, orderDetailDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.ORDERS) == null) {
+			sessionService.setAttribute(Const.ORDERS, ordersDAO.findAll());
+		}
+		
+		if (sessionService.getAttribute(Const.PUBLISHERS) == null) {
+			sessionService.setAttribute(Const.PUBLISHERS, publisherDAO.findAll());
+		}
+
 	}
 }

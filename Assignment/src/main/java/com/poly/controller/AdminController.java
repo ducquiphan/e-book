@@ -14,7 +14,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.poly.Const;
 import com.poly.dao.AccountDAO;
+import com.poly.dao.AdminDAO;
+import com.poly.dao.AuthorDAO;
 import com.poly.dao.BookDAO;
+import com.poly.dao.BooksOfAccountDAO;
+import com.poly.dao.CategoryDAO;
+import com.poly.dao.OrderDetailDAO;
+import com.poly.dao.OrdersDAO;
+import com.poly.dao.PublisherDAO;
 import com.poly.entity.Account;
 import com.poly.entity.BooksOfAccount;
 import com.poly.service.SessionService;
@@ -25,17 +32,15 @@ import com.poly.service.SessionService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
-	@Autowired 
-	AccountDAO accountDAO;
-	@Autowired
-	BookDAO bookDAO;
+	
 	@Autowired
 	SessionService sessionService;
 	
 	@GetMapping("")
 	public String getIndex() {
-		return "index-admin";
+		return "index-admin";	
 	}
+	
 	@PostMapping("")
 	public String postIndex() {
 		return "index-admin";

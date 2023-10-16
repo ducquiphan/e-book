@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.poly.Const;
 import com.poly.dao.AccountDAO;
 import com.poly.dao.BookDAO;
 import com.poly.entity.Account;
 import com.poly.entity.BooksOfAccount;
+import com.poly.service.SessionService;
 
 /**
  * 
@@ -25,7 +27,10 @@ import com.poly.entity.BooksOfAccount;
 public class AdminController {
 	@Autowired 
 	AccountDAO accountDAO;
+	@Autowired
 	BookDAO bookDAO;
+	@Autowired
+	SessionService sessionService;
 	
 	@GetMapping("")
 	public String getIndex() {
@@ -39,11 +44,6 @@ public class AdminController {
 	@GetMapping("/adminManagement")
 	public String getAdminManagement() {
 		return "admin-management";
-	}
-	
-	@GetMapping("/accountManagement")
-	public String getAccountManagement() {
-		return "account-management";
 	}
 	
 	@GetMapping("/authorManagement")
@@ -78,7 +78,8 @@ public class AdminController {
 	
 	@GetMapping("/loggout")
 	public String getLoggout() {
-		return "redirect:/home";
+		sessionService.removeAttribute(Const.ACCOUNT);
+		return "redirect:/user/login";
 	}
 	
 	@GetMapping("/personalInfo")

@@ -59,12 +59,14 @@
 				<div class="col-lg-6">
 					<div class="login_form_inner">
 						<h3>Đăng nhập</h3>
-						<form class="row login_form" action="" method="post" id="contactForm" >
+						<form class="row login_form" action="/user/login" method="post" >
 							<div class="col-md-12 form-group">
 								<input type="text" class="form-control" id="username" name="username" placeholder="Tên đăng nhập" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Tên đăng nhập'">
+								<p class="text-danger mt-1">${usernameError}</p>
 							</div>
 							<div class="col-md-12 form-group">
 								<input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu'">
+								<p class="text-dange mt-1r">${passwordError}</p>
 							</div>
 							<div class="col-md-12 form-group">
 								<div class="creat_account">
@@ -74,7 +76,7 @@
 							</div>
 							<div class="col-md-12 form-group">
 								<!-- Nhớ chỉnh lại chỗ này khi code -->
-								<button type="submit" value="submit" class="primary-btn" formaction="/admin" formmethod="get">Đăng nhập</button>
+								<button type="submit" class="primary-btn">Đăng nhập</button>
 								<a href="/user/forgotpassword">Quên mật khẩu?</a>
 							</div>
 						</form>

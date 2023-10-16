@@ -23,7 +23,7 @@
                         class="sidebar-collapse-icon ti-angle-down"></span></a>
                 <ul>
                     <li><a href="/admin/adminManagement">Quản trị viên</a></li>
-                    <li><a href="/admin/accountManagement">Người dùng</a></li>
+                    <li><a href="/admin/account-management">Người dùng</a></li>
                     <li><a href="/admin/categoryManagement">Nhóm sách</a></li>
                     <li><a href="/admin/authorManagement">Tác giả</a></li>
                     <li><a href="/admin/publisherManagement">Nhà xuất bản</a></li>

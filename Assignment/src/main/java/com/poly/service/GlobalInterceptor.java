@@ -22,14 +22,14 @@ import jakarta.servlet.http.HttpServletResponse;
 @Service
 public class GlobalInterceptor implements HandlerInterceptor{
 	
-	@Autowired
-	BookDAO bookDAO;
-	@Autowired
-	PublisherDAO publisherDAO;
-	@Autowired
-	CategoryDAO categoryDAO;
-	@Autowired
-	AuthorDAO authorDAO;
+//	@Autowired
+//	BookDAO bookDAO;
+//	@Autowired
+//	PublisherDAO publisherDAO;
+//	@Autowired
+//	CategoryDAO categoryDAO;
+//	@Autowired
+//	AuthorDAO authorDAO;
 	
 	
 	@Override

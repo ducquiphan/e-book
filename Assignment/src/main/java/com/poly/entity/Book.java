@@ -39,13 +39,10 @@ public class Book implements Serializable{
 	@Min(1)
 	private Integer qty;
 	
-	@NotBlank
 	private String introduction;
 	
-	@NotBlank
 	private String picturePath;
 	
-	@NotBlank
 	private String contentPath;
 	
 	@NotNull

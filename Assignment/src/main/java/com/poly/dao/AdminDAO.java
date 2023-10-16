@@ -14,4 +14,14 @@ public interface AdminDAO extends JpaRepository<Admin, Integer>{
 	List<Admin> findAll();
 	
 	List<Admin> findByUsername(String username);
+	
+	List<Admin> findByEmail(String email);
+	
+	List<Admin> findByIdentityNumber(String identityNumber);
+	
+	List<Admin> findByIdOrUsername(Integer id, String username);
+	
+	List<Admin> findByIdOrEmail(Integer id, String email);
+	
+	List<Admin> findByIdOrIdentityNumber(Integer id, String identityNumber);
 }

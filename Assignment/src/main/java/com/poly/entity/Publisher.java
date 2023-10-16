@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -23,7 +24,7 @@ public class Publisher implements Serializable{
 	@NotBlank
 	private String name;
 	
-	@OneToMany(mappedBy = "publisher")
+	@OneToMany(mappedBy = "publisher", fetch = FetchType.LAZY)
 	private List<Book> book;
 	
 	private Boolean isActive = true;

@@ -12,5 +12,5 @@ public class Const {
 	public static final String BOOKS_OF_ACCOUNTS = "booksOfAccounts";
 	public static final String ORDER_DETAILS = "orderDetails";
 	public static final String PUBLISHERS = "publishers";
-	
+	public static final String SECURITY_URI = "securityUri";
 }

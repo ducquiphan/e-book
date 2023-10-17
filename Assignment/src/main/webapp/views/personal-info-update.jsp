@@ -45,22 +45,24 @@
 		<div class="container">
 			<div class="login_form_inner">
 				<h2>Thông tin cá nhân</h2>
-				<form class="row login_form" action="" id="contactForm" enctype="multipart/form-data">
-
+				<form class="row login_form" action="/user/update-profile" id="contactForm" enctype="multipart/form-data"
+					method="post">
+					<div class="col-md-12">
+						<span class="text-align-center">${message}</span>
+					</div>
 					<div class="col-md-12 form-group">
 						<input type="text" class="form-control" id="fullname" name="fullname" placeholder="Họ và tên"
-							onfocus="this.placeholder = ''" onblur="this.placeholder = 'Họ và tên'">
+							onfocus="this.placeholder = ''" onblur="this.placeholder = 'Họ và tên'" value="${sessionScope.account.fullname}" />
 					</div>
 					<div class="col-md-12 form-group">
 						<div class="form-group">
-							Thêm Ảnh <input name="picture" type="file" class="form-control" id="picture" />
+							<label>Sửa ảnh</label> <input name="picture" type="file" class="form-control" id="picture">
 						</div>
 					</div>
 					<div class="col-md-12 form-group">
-						<input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu xác nhận"
+						<input type="password" class="form-control" name="passwordConfirm" placeholder="Mật khẩu xác nhận"
 							onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu xác nhận'">
 					</div>
-					</tbody>
 					<div class="col-md-12 form-group">
 						<button type="submit" class="primary-btn">Cập nhật</button>
 					</div>

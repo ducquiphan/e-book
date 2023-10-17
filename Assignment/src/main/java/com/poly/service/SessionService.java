@@ -47,5 +47,4 @@ public class SessionService {
 		session.removeAttribute(name);
 	}
 	
-	
 }

@@ -34,7 +34,7 @@
 					<h1>Quên mật khẩu</h1>
 					<nav class="d-flex align-items-center">
 						<a href="/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-						<a href="/user/forgotpassword">Quên mật khẩu</a>
+						<a href="/user/forgot-password">Quên mật khẩu</a>
 					</nav>
 				</div>
 			</div>

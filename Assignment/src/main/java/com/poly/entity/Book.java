@@ -3,10 +3,6 @@ package com.poly.entity;
 import java.io.Serializable;
 import java.util.List;
 
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,7 +12,6 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
@@ -67,4 +62,20 @@ public class Book implements Serializable{
 	private List<OrderDetail> orderDetails;
 	
 	private Boolean isActive = true;
+	
+	// Method
+		public Book orderProduct(int qty) {
+			Book prod = null;
+			if (qty <= this.qty) {
+				try {
+					prod = (Book) this.clone();
+					prod.setQty(qty);
+					this.qty -= qty;
+				} catch (CloneNotSupportedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			return prod;
+		}
 }

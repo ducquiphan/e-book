@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../views/commons/_taglib-admin.jsp"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,11 +70,9 @@
 								<div class="card-body">
 									<form action="">
 										<div class="input-group mb-3">
-											<input type="text" name="find" class="form-control"
-												placeholder="Tìm kiếm theo tên" aria-label="Find fullname"
+											<input type="text" name="find" class="form-control" placeholder="Tìm kiếm theo tên" aria-label="Find fullname"
 												aria-describedby="button-addon2">
-											<button class="btn btn-outline-warning" type="button"
-												id="button-addon2">
+											<button class="btn btn-outline-warning" type="button" id="button-addon2">
 												<i class="ti-search"></i>
 											</button>
 										</div>
@@ -91,13 +88,14 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<th scope="row">1</th>
-													<td>Tiểu thuyết</td>
-													<td>100</td>
-													<td><span class="badge badge-success">10.000.000
-															VNĐ</span></td>
-												</tr>
+												<c:forEach var="item" items="${reportIncome}">
+													<tr>
+														<td scope="row">${index+1}</td>
+														<td>${item.category}</td>
+														<td>${item.orders}</td>
+														<td><span class="badge badge-success"><fmt:formatNumber value="${item.total}" type="number" pattern="#,##0" /> VNĐ</span></td>
+													</tr>
+												</c:forEach>
 											</tbody>
 										</table>
 									</div>
@@ -112,11 +110,9 @@
 								<div class="card-body">
 									<form action="">
 										<div class="input-group mb-3">
-											<input type="text" name="find" class="form-control"
-												placeholder="Tìm kiếm theo tên" aria-label="Find fullname"
+											<input type="text" name="find" class="form-control" placeholder="Tìm kiếm theo tên" aria-label="Find fullname"
 												aria-describedby="button-addon2">
-											<button class="btn btn-outline-warning" type="button"
-												id="button-addon2">
+											<button class="btn btn-outline-warning" type="button" id="button-addon2">
 												<i class="ti-search"></i>
 											</button>
 										</div>
@@ -135,11 +131,10 @@
 											<tbody>
 												<tr>
 													<th scope="row">1</th>
-													<th >1</th>
+													<th>1</th>
 													<td>Người bất tử</td>
 													<td>100</td>
-													<td><span class="badge badge-success">10.000.000
-															VNĐ</span></td>
+													<td><span class="badge badge-success">10.000.000 VNĐ</span></td>
 												</tr>
 											</tbody>
 										</table>

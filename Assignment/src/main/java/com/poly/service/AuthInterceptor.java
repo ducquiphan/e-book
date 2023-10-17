@@ -28,7 +28,7 @@ public class AuthInterceptor implements HandlerInterceptor {
 		String error = "";
 		if (session.getAttribute(Const.ACCOUNT) == null) {
 			error = "Please login!";
-			session.setAttribute("securityUri", uri);
+			session.setAttribute(Const.SECURITY_URI, uri);
 			response.sendRedirect("/user/login?error=" + error);
 			return false;
 		} else {
@@ -36,12 +36,12 @@ public class AuthInterceptor implements HandlerInterceptor {
 				Account user = session.getAttribute(Const.ACCOUNT);
 				if (user == null) {
 					error = "Please login as user!";
-					session.setAttribute("securityUri", uri);
+					session.setAttribute(Const.SECURITY_URI, uri);
 					response.sendRedirect("/user/login?error=" + error);
 					return false;
 				} else if (uri.startsWith("/admin")) {
 					error = "Access denied! Login as admin!";
-					session.setAttribute("securityUri", uri);
+					session.setAttribute(Const.SECURITY_URI, uri);
 					response.sendRedirect("/home?error=" + error);
 					return false;
 				}
@@ -51,13 +51,13 @@ public class AuthInterceptor implements HandlerInterceptor {
 				Admin admin = session.getAttribute(Const.ACCOUNT);
 				if (admin == null) {
 					error = "Please login as admin!";
-					session.setAttribute("securityUri", uri);
+					session.setAttribute(Const.SECURITY_URI, uri);
 					response.sendRedirect("/user/login?error=" + error);
 					return false;
 				} else if (uri.startsWith("/user") || uri.startsWith("/home") || uri.startsWith("/cart")
 						|| uri.startsWith("/product") || uri.startsWith("/category") || uri.startsWith("contact")) {
 					error = "Access denied! Loggin as user!";
-					session.setAttribute("securityUri", uri);
+					session.setAttribute(Const.SECURITY_URI, uri);
 					response.sendRedirect("/admin?error=" + error);
 					return false;
 				}

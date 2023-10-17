@@ -49,36 +49,37 @@
 		<div class="container">
 			<div class="login_form_inner">
 				<h2>Thông tin cá nhân</h2>
+				<span>${message}</span>
 				<form class="row login_form" action="" id="contactForm">
 					<table class="table">
 						<tbody>
 							<tr>
 								<td colspan="2"><img
-									src="${path}/img/category/nhagiakim_3.jpg"
+									src="${path}/images/avatar/${sessionScope.account.avatar}"
 									class="rounded-circle" style="width: 150px; height: 140px;" alt="Avatar" /></td>
 							</tr>
 							<tr>
 								<td>
-									<h5 style="font-family: 'Roboto', sans-serif;">Họ và tên</h5>
+									<h5>Họ và tên</h5>
 								</td>
 								<td>
-									<h5 style="font-family: 'Roboto', sans-serif;">Nhóm 7</h5>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<h5 style="font-family: 'Roboto', sans-serif;">Email</h5>
-								</td>
-								<td>
-									<h5 style="font-family: 'Roboto', sans-serif;">nhom7@gmail.com</h5>
+									<h5>${sessionScope.account.fullname}</h5>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<h5 style="font-family: 'Roboto', sans-serif;">Mật khẩu</h5>
+									<h5 >Email</h5>
 								</td>
 								<td>
-									<h5 style="font-family: 'Roboto', sans-serif;">**********</h5>
+									<h5>${sessionScope.account.email}</h5>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<h5>Mật khẩu</h5>
+								</td>
+								<td>
+									<h5>*******</h5>
 								</td>
 							</tr>
 						</tbody>

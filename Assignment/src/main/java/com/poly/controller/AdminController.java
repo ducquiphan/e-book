@@ -77,7 +77,8 @@ public class AdminController {
 	}
 	
 	@GetMapping("")
-	public String getIndex() {
+	public String getIndex(Model model) {
+		model.addAttribute("reportIncome", categoryDAO.getReportIncomes());
 		return "index-admin";
 	}
 

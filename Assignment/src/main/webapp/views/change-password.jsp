@@ -45,7 +45,10 @@
 		<div class="container">
 			<div class="login_form_inner">
 				<h2>Đổi mật khẩu</h2>
-				<form class="row login_form" action="" id="contactForm" enctype="multipart/form-data">
+				<form class="row login_form" action="/user/change-password" method="post" id="contactForm" enctype="multipart/form-data">
+					<div class="col-md-12">
+						<span class="text-align-center">${message}</span>
+					</div>
 					<div class="col-md-12 form-group">
 						<input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu cũ"
 							onfocus="this.placeholder = ''" onblur="this.placeholder = 'Mật khẩu cũ'">

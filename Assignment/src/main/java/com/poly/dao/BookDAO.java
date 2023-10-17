@@ -23,4 +23,11 @@ public interface BookDAO extends JpaRepository<Book, Integer> {
 	Page<Book> findAllByTitleLike(String title, Pageable pageable);
 	
 	Page<Book> findAllByIsActive(Boolean isActive, Pageable pageable);
+	
+//	@Query("Select new ReportIncome(c.id, c.name, count(od.order.id), sum(b.price * od.qty)) " + "from Category c "
+//			+ "left join Book b "
+//			+ "on c.id = b.category.id"
+//			+ " right join OrderDetail od "
+//			+ "on od.book.id = b.id "
+//			+ "group by c.name, c.id ")
 }

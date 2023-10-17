@@ -3,21 +3,40 @@
  */
 package com.poly.controller;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.poly.Const;
 import com.poly.dao.AccountDAO;
 import com.poly.dao.AdminDAO;
 import com.poly.entity.Account;
 import com.poly.entity.Admin;
+import com.poly.model.MailInfo;
 import com.poly.service.CookieService;
+import com.poly.service.MailService;
 import com.poly.service.ParamService;
 import com.poly.service.SessionService;
+import com.poly.service.UploadService;
+import com.poly.service.impl.MailServiceImpl;
+
+import jakarta.servlet.ServletContext;
 
 /**
  * 
@@ -35,7 +54,13 @@ public class UserController {
 	@Autowired
 	AccountDAO accountDAO;
 	@Autowired
+	UploadService uploadService;
+	@Autowired
 	AdminDAO adminDAO;
+	@Autowired
+	ServletContext app;
+	@Autowired
+	MailService mailService; 
 
 	@GetMapping("/login")
 	public String getLogin(Model model) {
@@ -76,6 +101,7 @@ public class UserController {
 						}
 						sessionService.setAttribute(Const.ACCOUNT, user);
 						String uri = (String) sessionService.getAttribute("securityUri");
+						sessionService.removeAttribute(Const.SECURITY_URI);
 						if (uri != null) {
 							return "redirect:" + uri;
 						} else {
@@ -122,13 +148,31 @@ public class UserController {
 	}
 
 	@GetMapping("/registration")
-	public String getRegistration() {
+	public String getRegistration(Model model, @ModelAttribute("account") Account account) {
 		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Account) {
 			return "redirect:/home";
-			
 		}
-		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Admin) {
-			return "redirect:/admin";
+		return "registration";
+	}
+
+	@PostMapping("/registration")
+	public String posrRegistration(Model model, @Validated @ModelAttribute("account") Account account,
+			BindingResult bindingResult, @RequestParam("passwordConfirmation") String passwordConfirmation) {
+		if (account.getPassword().equals(passwordConfirmation)) {
+			if (!accountDAO.findByEmail(account.getEmail()).isEmpty()) {
+				model.addAttribute("message", "Tài khoản đã tồn tại");
+			} else {
+				if (bindingResult.hasErrors()) {
+					model.addAttribute("message", "Vui lòng sửa các lỗi sau:");
+				} else {
+					accountDAO.save(account);
+					sessionService.setAttribute(Const.ACCOUNT, accountDAO.findByEmail(account.getEmail()).get(0));
+					model.addAttribute("message", "Tạo tài khoản thành công!");
+					return "forward:/user";
+				}
+			}
+		} else {
+			model.addAttribute("passwordConfirmationMessage", "Mật khẩu xác nhận không chính xác!");
 		}
 		return "registration";
 	}
@@ -153,13 +197,71 @@ public class UserController {
 		return "change-password";
 	}
 
+	@PostMapping("/change-password")
+	public String postChangePassword(Model model, @RequestParam("password") String password,
+			@RequestParam("newPassword") String newPassword,
+			@RequestParam("passwordConfirmation") String passwordConfirmation) {
+		Account acc = sessionService.getAttribute(Const.ACCOUNT);
+		if (acc.getPassword().equals(password)) {
+			if (newPassword.equals(passwordConfirmation)) {
+				acc.setPassword(passwordConfirmation);
+				accountDAO.save(acc);
+				model.addAttribute("message", "Đổi mật khẩu thành công!");
+			}
+		}else {
+			model.addAttribute("message", "Mật khẩu không đúng!");
+		}
+		return "change-password";
+	}
+
 	@GetMapping("/forgot-password")
 	public String getForgotPassword() {
+		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Account) {
+			return "redirect:/home";
+		}
+		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Admin) {
+			return "redirect:/admin";
+		}
+		return "forgot-password";
+	}
+	
+	@PostMapping("/forgot-password")
+	public String postForgotPassword(Model model, @RequestParam("email") String email) {
+		Account account =  accountDAO.findByEmail(email).get(0);
+		if (account != null) {
+			String body = "Mật khẩu của bạn là: " +account.getPassword()+". Vui lòng đăng nhập và đổi mật khẩu trong trường hợp bạn sẽ tiếp tục quên";
+			mailService.queue(email, "[Bokonl] Lấy lại mật khẩu", body);
+			model.addAttribute("message","Mật khẩu của bạn đã được gửi đến mail, vui lòng đợi trong giây lát!");
+		}else {
+			model.addAttribute("message","Email không tồn tại!");
+		}
 		return "forgot-password";
 	}
 
 	@GetMapping("/update-profile")
-	public String getUpdateUser() {
+	public String getUpdateUser(Model model, @ModelAttribute("account") Account account) {
+		return "personal-info-update";
+	}
+
+	@PostMapping("/update-profile")
+	public String postUpdateUser(Model model, @RequestParam("fullname") String fullname,
+			@RequestParam("picture") MultipartFile file, @RequestParam("passwordConfirm") String passwordConfirm) {
+		Account acc = sessionService.getAttribute(Const.ACCOUNT);
+		if (!file.isEmpty()) {
+			uploadService.save(file, app.getRealPath("/views/images/avatar/"));
+			String pictureName = StringUtils.cleanPath(file.getOriginalFilename());
+			acc.setAvatar(pictureName);
+		}
+		if (fullname.isBlank()) {
+			model.addAttribute("message", "Tên không được để trống:");
+		} else {
+			if (acc.getPassword().equals(passwordConfirm)) {
+				accountDAO.save(acc);
+				model.addAttribute("message", "Cập nhật thành công!");
+			} else {
+				model.addAttribute("message", "Mật khẩu không đúng!");
+			}
+		}
 		return "personal-info-update";
 	}
 
@@ -168,14 +270,14 @@ public class UserController {
 		sessionService.removeAttribute(Const.ACCOUNT);
 		return "login";
 	}
-	
+
 	@GetMapping("/orders/order-detail")
 	public String getOrderDetail() {
 		return "order-detail";
 	}
-	
+
 	@GetMapping("/orders")
 	public String getUserOrders() {
 		return "my-orders";
-	}	
+	}
 }

@@ -5,6 +5,13 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.Transient;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.poly.dao.OrdersDAO;
+import com.poly.validator.Phone;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,14 +41,26 @@ public class Orders implements Serializable{
 	Account account;
 	
 	@NotBlank
+	@Phone
 	String phone;
 	
 	@Temporal(TemporalType.DATE)
 	@Column(name = "orderDate")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date orderDate = new Date();
 	
 	@OneToMany(mappedBy = "order")
 	List<OrderDetail> orderDetails;
 	
 	Boolean isActive = true;
+	
+	public Double getTotal() {
+		Double result = 0.0;
+		if (!orderDetails.isEmpty()) {
+			for (OrderDetail orderDetail : orderDetails) {
+				result += orderDetail.getPrice()*orderDetail.getQty();
+			}
+		}
+		return result;
+	}
 }

@@ -55,11 +55,13 @@ public class AccountController {
 		return "account-management";
 	}
 
-	@GetMapping("/page")
+	@GetMapping("/search")
 	public String page(Model model, @ModelAttribute("account") Account account,
-			@RequestParam("p") Optional<Integer> p) {
+			@RequestParam("p") Optional<Integer> p, @RequestParam("q") Optional<String> q) {
+		String qString = q.orElse("");
 		Pageable page = PageRequest.of(p.orElse(0), 5);
-		model.addAttribute("page", dao.findAll(page));
+		model.addAttribute("page", dao.findAllByFullnameLike("%"+qString+"%",page));
+		model.addAttribute("q", qString);
 		return "account-management";
 	}
 

@@ -27,7 +27,7 @@
 						<div class="page-header">
 							<div class="page-title">
 								<h1>
-									Xin chào Nhóm 7, <span>chúc bạn một ngày tốt lành!</span>
+									Xin chào ${sessionScope.account.fullname}, <span>chúc bạn một ngày tốt lành!</span>
 								</h1>
 							</div>
 						</div>
@@ -58,6 +58,10 @@
 										<form:form id="form" action="/admin/account-management" method="post" enctype="multipart/form-data"
 											modelAttribute="account">
 											<label class="mb-3">${message}</label>
+											<div class="form-group">
+												<label>Mã người dùng</label> <input readonly="readonly" value="${account.id}" type="text" name="id"
+													class="form-control input-default" placeholder="Mã người dùng">
+											</div>
 											<div class="form-group">
 												<label>Email</label>
 												<form:input path="email" type="text" class="form-control input-default" placeholder="Email" />
@@ -94,8 +98,10 @@
 											<div class="">
 												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management">Mới</button>
 												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/create">Thêm</button>
-												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/update" onclick="return confirmSubmit()">Sửa</button>
-												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/delete" onclick="return confirmSubmit()">Xóa</button>
+												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/update"
+													onclick="return confirmSubmit()">Sửa</button>
+												<button type="submit" class="btn btn-warning mr-2" formaction="/admin/account-management/delete"
+													onclick="return confirmSubmit()">Xóa</button>
 											</div>
 										</form:form>
 
@@ -106,11 +112,11 @@
 					</div>
 					<div class="row d-flex justify-content-center ">
 						<div class="col-12 col-sm-11">
-							<form action="">
+							<form action="/admin/account-management/search?p=${page.number}" method="get">
 								<div class="input-group mb-3">
-									<input type="text" name="find" class="form-control" placeholder="Tìm kiếm theo tên" aria-label="Find fullname"
-										aria-describedby="button-addon2">
-									<button class="btn btn-outline-warning" type="button" id="button-addon2">
+									<input type="text" name="q" value="${q}" class="form-control" placeholder="Tìm kiếm theo tên"
+										aria-label="Find fullname" aria-describedby="button-addon2">
+									<button class="btn btn-outline-warning" type="submit" id="button-addon2">
 										<i class="ti-search"></i>
 									</button>
 								</div>
@@ -157,29 +163,29 @@
 										<nav aria-label="Page navigation example">
 											<ul class="pagination justify-content-center">
 												<c:if test="${page.number == 0}">
-													<li class="page-item disabled"><a href="/admin/account-management/page?p=0" class="page-link"><i
+													<li class="page-item disabled"><a href="/admin/account-management/search?p=0&q=${q}" class="page-link"><i
 															class="ti ti-angle-double-left"></i></a></li>
-													<li class="page-item disabled"><a href="/admin/account-management/page?p=0" class="page-link"><i
+													<li class="page-item disabled"><a href="/admin/account-management/search?p=0&q=${q}" class="page-link"><i
 															class="ti ti-angle-left"></i></a></li>
 												</c:if>
 												<c:if test="${page.number != 0}">
-													<li class="page-item"><a href="/admin/account-management/page?p=0" class="page-link"><i
+													<li class="page-item"><a href="/admin/account-management/search?p=0&q=${q}" class="page-link"><i
 															class="ti ti-angle-double-left"></i></a></li>
 
-													<li class="page-item"><a href="/admin/account-management/page?p=${page.number-1}" class="page-link" href="#"><i
-															class="ti ti-angle-left"></i></a></li>
+													<li class="page-item"><a href="/admin/account-management/search?p=${page.number-1}&q=${q}" class="page-link"
+														href="#"><i class="ti ti-angle-left"></i></a></li>
 												</c:if>
 												<c:if test="${page.number == page.totalPages-1}">
-													<li class="page-item disabled"><a href="/admin/account-management/page?p=${page.totalPages-1}"
+													<li class="page-item disabled"><a href="/admin/account-management/search?p=${page.totalPages-1}&q=${q}"
 														class="page-link" href="#"><i class="ti ti-angle-right"></i></a></li>
-													<li class="page-item disabled"><a href="/admin/account-management/page?p=${page.totalPages-1}"
+													<li class="page-item disabled"><a href="/admin/account-management/search?p=${page.totalPages-1}&q=${q}"
 														class="page-link" href="#"><i class="ti ti-angle-double-right"></i></a></li>
 												</c:if>
 												<c:if test="${page.number != page.totalPages-1}">
-													<li class="page-item"><a href="/admin/account-management/page?p=${page.number+1}" class="page-link" href="#"><i
-															class="ti ti-angle-right"></i></a></li>
-													<li class="page-item"><a href="/admin/account-management/page?p=${page.totalPages-1}" class="page-link"
-														href="#"><i class="ti ti-angle-double-right"></i></a></li>
+													<li class="page-item"><a href="/admin/account-management/search?p=${page.number+1}&q=${q}" class="page-link"
+														href="#"><i class="ti ti-angle-right"></i></a></li>
+													<li class="page-item"><a href="/admin/account-management/search?p=${page.totalPages-1}&q=${q}"
+														class="page-link" href="#"><i class="ti ti-angle-double-right"></i></a></li>
 												</c:if>
 											</ul>
 										</nav>

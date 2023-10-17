@@ -27,7 +27,7 @@
 						<div class="page-header">
 							<div class="page-title">
 								<h1>
-									Xin chào Nhóm 7, <span>chúc bạn một ngày tốt lành!</span>
+									Xin chào ${sessionScope.account.fullname}, <span>chúc bạn một ngày tốt lành!</span>
 								</h1>
 							</div>
 						</div>
@@ -141,11 +141,11 @@
 					</div>
 					<div class="row d-flex justify-content-center ">
 						<div class="col-12 col-sm-11">
-							<form action="">
+							<form action="/admin/book-management/search?p=${page.number}" method="get">
 								<div class="input-group mb-3">
-									<input type="text" name="find" class="form-control" placeholder="Tìm kiếm theo tên" aria-label="Find fullname"
-										aria-describedby="button-addon2">
-									<button class="btn btn-outline-warning" type="button" id="button-addon2">
+									<input type="text" name="q" value="${q}" class="form-control" placeholder="Tìm kiếm theo tên sách"
+										aria-label="Find title" aria-describedby="button-addon2">
+									<button class="btn btn-outline-warning" type="submit" id="button-addon2">
 										<i class="ti-search"></i>
 									</button>
 								</div>
@@ -201,28 +201,28 @@
 										<nav aria-label="Page navigation example">
 											<ul class="pagination justify-content-center">
 												<c:if test="${page.number == 0}">
-													<li class="page-item disabled"><a href="/admin/book-management/page?p=0" class="page-link"><i
+													<li class="page-item disabled"><a href="/admin/book-management/search?p=0&q=${q}" class="page-link"><i
 															class="ti ti-angle-double-left"></i></a></li>
-													<li class="page-item disabled"><a href="/admin/book-management/page?p=0" class="page-link"><i
+													<li class="page-item disabled"><a href="/admin/book-management/search?p=0&q=${q}" class="page-link"><i
 															class="ti ti-angle-left"></i></a></li>
 												</c:if>
 												<c:if test="${page.number != 0}">
-													<li class="page-item"><a href="/admin/book-management/page?p=0" class="page-link"><i
+													<li class="page-item"><a href="/admin/book-management/search?p=0&q=${q}" class="page-link"><i
 															class="ti ti-angle-double-left"></i></a></li>
 
-													<li class="page-item"><a href="/admin/book-management/page?p=${page.number-1}" class="page-link" href="#"><i
+													<li class="page-item"><a href="/admin/book-management/search?p=${page.number-1}&q=${q}" class="page-link" href="#"><i
 															class="ti ti-angle-left"></i></a></li>
 												</c:if>
 												<c:if test="${page.number == page.totalPages-1}">
-													<li class="page-item disabled"><a href="/admin/book-management/page?p=${page.totalPages-1}" class="page-link"
+													<li class="page-item disabled"><a href="/admin/book-management/search?p=${page.totalPages-1}&q=${q}" class="page-link"
 														href="#"><i class="ti ti-angle-right"></i></a></li>
-													<li class="page-item disabled"><a href="/admin/book-management/page?p=${page.totalPages-1}" class="page-link"
+													<li class="page-item disabled"><a href="/admin/book-management/search?p=${page.totalPages-1}&q=${q}" class="page-link"
 														href="#"><i class="ti ti-angle-double-right"></i></a></li>
 												</c:if>
 												<c:if test="${page.number != page.totalPages-1}">
-													<li class="page-item"><a href="/admin/book-management/page?p=${page.number+1}" class="page-link" href="#"><i
+													<li class="page-item"><a href="/admin/book-management/search?p=${page.number+1}&q=${q}" class="page-link" href="#"><i
 															class="ti ti-angle-right"></i></a></li>
-													<li class="page-item"><a href="/admin/book-management/page?p=${page.totalPages-1}" class="page-link" href="#"><i
+													<li class="page-item"><a href="/admin/book-management/search?p=${page.totalPages-1}&q=${q}" class="page-link" href="#"><i
 															class="ti ti-angle-double-right"></i></a></li>
 												</c:if>
 											</ul>

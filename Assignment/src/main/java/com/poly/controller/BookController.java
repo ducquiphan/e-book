@@ -80,10 +80,12 @@ public class BookController {
 		return "book-management";
 	}
 
-	@GetMapping("/page")
-	public String page(Model model, @ModelAttribute("book") Book book, @RequestParam("p") Optional<Integer> p) {
+	@GetMapping("/search")
+	public String page(Model model, @ModelAttribute("book") Book book, @RequestParam("p") Optional<Integer> p, @RequestParam("q") Optional<String> q) {
+		String qString = q.orElse("");
 		Pageable page = PageRequest.of(p.orElse(0), 5);
-		model.addAttribute("page", bookDAO.findAll(page));
+		model.addAttribute("page", bookDAO.findAllByTitleLike("%"+qString+"%",page));
+		model.addAttribute("q", qString);
 		return "book-management";
 	}
 

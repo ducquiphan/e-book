@@ -1,6 +1,7 @@
 package com.poly.entity;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -47,12 +47,6 @@ public class BookController {
 	SessionService sessionService;
 	@Autowired
 	BookDAO bookDAO;
-//	@Autowired
-//	AuthorDAO authorDAO;
-//	@Autowired
-//	PublisherDAO publisherDAO;
-//	@Autowired
-//	CategoryDAO categoryDAO;
 	@Autowired
 	ServletContext app;
 	@Autowired
@@ -72,9 +66,6 @@ public class BookController {
 		book.setCategory(null);
 		book.setPublisher(null);
 		book.setIsActive(true);
-		//model.addAttribute(Const.AUTHORS,authorDAO.findAll());
-		//model.addAttribute(Const.CATEGORIES,categoryDAO.findAll());
-		//model.addAttribute(Const.PUBLISHERS, publisherDAO.findAll());
 		Pageable page = PageRequest.of(p.orElse(0), 5);
 		model.addAttribute("page", bookDAO.findAll(page));
 		return "book-management";

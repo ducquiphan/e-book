@@ -182,7 +182,7 @@
 				<section class="lattest-product-area pb-40 category-list">
 					<div class="row">
 						<!-- single product -->
-						<c:forEach items="${books}" var="b">
+						<c:forEach items="${page.content}" var="b">
 							<div class="col-lg-4 col-md-6">
 								<div class="single-product">
 									<img class="img-fluid1"
@@ -201,7 +201,8 @@
 
 											<a href="" class="social-info"> <span class="ti-bag"></span>
 												<p class="hover-text">Thêm vào giỏ</p>
-											</a> <a href="" class="social-info"> <span
+											</a>
+											 <a href="/product?id=${b.id}" class="social-info"> <span
 												class="lnr lnr-move"></span>
 												<p class="hover-text">Xem chi tiết</p>
 											</a>
@@ -212,18 +213,48 @@
 						</c:forEach>
 				</section>
 				<!-- Start Filter Bar -->
-				<div class="filter-bar d-flex flex-wrap align-items-center">
-					<div class="pagination">
-						<a href="#" class="prev-arrow"><i class="fa fa-long-arrow-left" aria-hidden="true"></i></a> 
-							<a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> 
-						<a href="#" class="next-arrow"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-					</div>
-				</div>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<c:if test="${page.number == 0}">
+							<li class="page-item disabled"><a
+								href="/category?p=0}"
+								class="page-link"><i class="ti ti-angle-double-left"></i></a></li>
+							<li class="page-item disabled"><a
+								href="/category?p=0"
+								class="page-link"><i class="ti ti-angle-left"></i></a></li>
+						</c:if>
+						<c:if test="${page.number != 0}">
+							<li class="page-item"><a
+								href="/category?p=0"
+								class="page-link"><i class="ti ti-angle-double-left"></i></a></li>
+							<li class="page-item"><a
+								href="/category?p=${page.number-1}"
+								class="page-link" href="#"><i class="ti ti-angle-left"></i></a></li>
+						</c:if>
+						<c:if test="${page.number == page.totalPages-1}">
+							<li class="page-item disabled"><a
+								href="/category?p=${page.totalPages-1}"
+								class="page-link" href="#"><i class="ti ti-angle-right"></i></a></li>
+							<li class="page-item disabled"><a
+								href="/category?p=${page.totalPages-1}"
+								class="page-link" href="#"><i
+									class="ti ti-angle-double-right"></i></a></li>
+						</c:if>
+						<c:if test="${page.number != page.totalPages-1}">
+							<li class="page-item"><a
+								href="/category?p=${page.number+1}"
+								class="page-link" href="#"><i class="ti ti-angle-right"></i></a></li>
+							<li class="page-item"><a
+								href="/category?p=${page.totalPages-1}"
+								class="page-link" href="#"><i
+									class="ti ti-angle-double-right"></i></a></li>
+						</c:if>
+					</ul>
+				</nav>
 				<!-- End Filter Bar -->
 			</div>
 		</div>
 	</div>
-
 
 	<!-- Start footer Area -->
 	<%@include file="../views/commons/_footer.jsp"%>

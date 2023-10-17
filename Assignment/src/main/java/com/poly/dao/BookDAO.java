@@ -21,4 +21,7 @@ public interface BookDAO extends JpaRepository<Book, Integer> {
 	List<Book> findByTitle(String title);
 
 	Page<Book> findAllByTitleLike(String title, Pageable pageable);
+	
+	Page<Book> findAllByIsActive(Boolean isActive, Pageable pageable);
+	
 }

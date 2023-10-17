@@ -63,19 +63,4 @@ public class Book implements Serializable{
 	
 	private Boolean isActive = true;
 	
-	// Method
-		public Book orderProduct(int qty) {
-			Book prod = null;
-			if (qty <= this.qty) {
-				try {
-					prod = (Book) this.clone();
-					prod.setQty(qty);
-					this.qty -= qty;
-				} catch (CloneNotSupportedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-			return prod;
-		}
 }

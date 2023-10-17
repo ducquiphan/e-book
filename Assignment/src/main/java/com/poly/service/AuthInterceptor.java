@@ -26,32 +26,42 @@ public class AuthInterceptor implements HandlerInterceptor {
 		String uri = request.getRequestURI();
 		System.out.println(uri);
 		String error = "";
-
-		Account user = session.getAttribute(Const.ACCOUNT);
-		if (user == null) {
-			error = "Please login as user!";
+		if (session.getAttribute(Const.ACCOUNT) == null) {
+			error = "Please login!";
 			session.setAttribute("securityUri", uri);
 			response.sendRedirect("/user/login?error=" + error);
 			return false;
-		} else if (uri.startsWith("/admin")) {
-			error = "Access denied! Login as admin!";
-			session.setAttribute("securityUri", uri);
-			response.sendRedirect("/home?error=" + error);
-			return false;
-		}
+		} else {
+			if (session.getAttribute(Const.ACCOUNT) instanceof Account) {
+				Account user = session.getAttribute(Const.ACCOUNT);
+				if (user == null) {
+					error = "Please login as user!";
+					session.setAttribute("securityUri", uri);
+					response.sendRedirect("/user/login?error=" + error);
+					return false;
+				} else if (uri.startsWith("/admin")) {
+					error = "Access denied! Login as admin!";
+					session.setAttribute("securityUri", uri);
+					response.sendRedirect("/home?error=" + error);
+					return false;
+				}
+			}
 
-		Admin admin = session.getAttribute(Const.ACCOUNT);
-		if (admin == null) {
-			error = "Please login as admin!";
-			session.setAttribute("securityUri", uri);
-			response.sendRedirect("/user/login?error=" + error);
-			return false;
-		} else if (uri.startsWith("/user") || uri.startsWith("/home") || uri.startsWith("/cart")
-				|| uri.startsWith("/product") || uri.startsWith("/category") || uri.startsWith("contact")) {
-			error = "Access denied! Loggin as user!";
-			session.setAttribute("securityUri", uri);
-			response.sendRedirect("/admin?error=" + error);
-			return false;
+			if (session.getAttribute(Const.ACCOUNT) instanceof Admin) {
+				Admin admin = session.getAttribute(Const.ACCOUNT);
+				if (admin == null) {
+					error = "Please login as admin!";
+					session.setAttribute("securityUri", uri);
+					response.sendRedirect("/user/login?error=" + error);
+					return false;
+				} else if (uri.startsWith("/user") || uri.startsWith("/home") || uri.startsWith("/cart")
+						|| uri.startsWith("/product") || uri.startsWith("/category") || uri.startsWith("contact")) {
+					error = "Access denied! Loggin as user!";
+					session.setAttribute("securityUri", uri);
+					response.sendRedirect("/admin?error=" + error);
+					return false;
+				}
+			}
 		}
 
 		return true;

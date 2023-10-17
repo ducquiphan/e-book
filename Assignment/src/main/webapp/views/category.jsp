@@ -198,8 +198,7 @@
 											<h6 class="l-through">$$$$$ VND</h6>
 										</div>
 										<div class="prd-bottom">
-
-											<a href="" class="social-info"> <span class="ti-bag"></span>
+											<a href="/cart/add/${b.id} " class="social-info"> <span class="ti-bag"></span>
 												<p class="hover-text">Thêm vào giỏ</p>
 											</a>
 											 <a href="/product?id=${b.id}" class="social-info"> <span

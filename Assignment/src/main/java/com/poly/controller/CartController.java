@@ -15,17 +15,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CartController {
 	
 	
-	@GetMapping("/cart")
+	
+	
+	@GetMapping("")
 	public String getCart() {
 		return "cart";
 	}
 	
-	@GetMapping("/cart/checkout")
+	@GetMapping("/checkout")
 	public String getCheckOut() {
 		return "checkout";
 	}
 	
-	@GetMapping("/cart/confirmation")
+	@GetMapping("/confirmation")
 	public String getConfirmation() {
 		return "confirmation";
 	}

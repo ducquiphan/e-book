@@ -85,9 +85,9 @@
 					</table>
 					<div class="col-md-12 form-group mb-3">
 						<button type="submit" class="primary-btn mb-2"
-							formaction="/user/updateprofile">Cập nhật tài khoản</button>
+							formaction="/user/update-profile">Cập nhật tài khoản</button>
 						<button type="submit" class="primary-btn"
-							formaction="/user/changepassword">Đổi mật khẩu</button>
+							formaction="/user/change-password">Đổi mật khẩu</button>
 					</div>
 					<div class="col-md-12 form-group">
 						Trong trường hợp muốn đổi email, vui lòng liên hệ với chúng tôi qua email bokonldnl@gmail.com

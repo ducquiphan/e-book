@@ -35,7 +35,7 @@
 					<nav class="d-flex align-items-center">
 						<a href="/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
 						<a href="/user/orders">Đơn hàng của tôi<span class="lnr lnr-arrow-right"></span></a>
-						<a href="/orderDetail">Chi tiết đơn hàng</a>
+						<a href="/user/orders/order-detail">Chi tiết đơn hàng</a>
 					</nav>
 				</div>
 			</div>

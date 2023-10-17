@@ -28,7 +28,7 @@ public class AssignmentApplication {
 		
 		// Send request
 		String url = "http://localhost:8090/home";
-	
+		
 	}
 	
 	

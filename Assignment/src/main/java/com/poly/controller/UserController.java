@@ -42,7 +42,6 @@ public class UserController {
 		Account account = null;
 		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Account) {
 			return "redirect:/home";
-			
 		}
 		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Admin) {
 			return "redirect:/admin";
@@ -124,6 +123,13 @@ public class UserController {
 
 	@GetMapping("/registration")
 	public String getRegistration() {
+		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Account) {
+			return "redirect:/home";
+			
+		}
+		if (sessionService.getAttribute(Const.ACCOUNT) instanceof Admin) {
+			return "redirect:/admin";
+		}
 		return "registration";
 	}
 
@@ -132,27 +138,27 @@ public class UserController {
 		return "personal-info";
 	}
 
-	@GetMapping("/bookshelf")
+	@GetMapping("/my-bookshelf")
 	public String getUserBookshelf() {
 		return "my-bookshelf";
 	}
 
-	@PostMapping("/MyProduct")
+	@PostMapping("/my-product")
 	public String getMyProduct() {
 		return "my-bookshelf";
 	}
 
-	@GetMapping("/changepassword")
+	@GetMapping("/change-password")
 	public String getChangePassword() {
 		return "change-password";
 	}
 
-	@GetMapping("/forgotpassword")
+	@GetMapping("/forgot-password")
 	public String getForgotPassword() {
 		return "forgot-password";
 	}
 
-	@GetMapping("/updateprofile")
+	@GetMapping("/update-profile")
 	public String getUpdateUser() {
 		return "personal-info-update";
 	}
@@ -162,4 +168,14 @@ public class UserController {
 		sessionService.removeAttribute(Const.ACCOUNT);
 		return "login";
 	}
+	
+	@GetMapping("/orders/order-detail")
+	public String getOrderDetail() {
+		return "order-detail";
+	}
+	
+	@GetMapping("/orders")
+	public String getUserOrders() {
+		return "my-orders";
+	}	
 }

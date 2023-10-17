@@ -68,21 +68,7 @@
                                     <h5>500.000 VND</h5>
                                 </td>
                                 <td>
-                                    <a href="/orderDetail" class="text-danger" >Chi tiết</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h5>1</h5>
-                                </td>
-                                <td>
-                                    <h5>1/10/2023</h5>
-                                </td>
-                                <td>
-                                    <h5>500.000 VND</h5>
-                                </td>
-                                <td>
-                                    <a href="/orderDetail" class="text-danger">Chi tiết</a>
+                                    <a href="/user/orders/order-detail" class="text-danger" >Chi tiết</a>
                                 </td>
                             </tr>
                         </tbody>

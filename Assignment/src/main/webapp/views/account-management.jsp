@@ -27,7 +27,7 @@
 						<div class="page-header">
 							<div class="page-title">
 								<h1>
-									Xin chào Nhóm 7, <span>chúc bạn một ngày tốt lành!</span>
+									Xin chào ${sessionScope.account.fullname}, <span>chúc bạn một ngày tốt lành!</span>
 								</h1>
 							</div>
 						</div>

@@ -96,7 +96,7 @@
 							</button>
 						</div>
 						<div class="card_area d-flex align-items-center">
-							<a class="primary-btn" href="#">Thêm vào giỏ hàng</a>
+							<a class="primary-btn" href="/cart/add/${book.id}">Thêm vào giỏ hàng</a>
 						</div>
 					</div>
 				</div>

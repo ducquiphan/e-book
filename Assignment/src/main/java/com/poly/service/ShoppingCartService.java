@@ -3,9 +3,12 @@
  */
 package com.poly.service;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 
 import com.poly.entity.Book;
+import com.poly.entity.CartItem;
 
 /**
  * 
@@ -17,7 +20,16 @@ public interface ShoppingCartService {
 	 * @param id là mã mặt hàng cần thêm
 	 * @return mặt hàng đã được thêm vào hoặc cập nhật số lượng
 	 */
-	void addBook(Integer id);
+	void addBook(CartItem item);
+	
+	/**
+	 * Thêm mặt hàng vào giỏ hoặc tăng số lượng lên 1 nếu đã tồn tại
+	 * 
+	 * @param id là mã mặt hàng cần thêm
+	 * @param id là số mặt hàng cần thêm
+	 * @return mặt hàng đã được thêm vào hoặc cập nhật số lượng
+	 */
+	void addBook(Integer id, Integer qty);
 
 	/**
 	 * Xóa mặt hàng khỏi giỏ
@@ -33,7 +45,7 @@ public interface ShoppingCartService {
 	 * @param qty số lượng mới
 	 * @return mặt hàng đã được thay đổi số lượng
 	 */
-	void updateBook(Integer id, int qty);
+	CartItem updateBook(Integer id, int qtyCart);
 
 	/**
 	 * Xóa sạch các mặt hàng trong giỏ
@@ -43,7 +55,7 @@ public interface ShoppingCartService {
 	/**
 	 * Lấy tất cả các mặt hàng trong giỏ
 	 */
-	Map<Integer, Book> getBooks();
+	Map<Integer, CartItem> getCartItems();
 
 	/**
 	 * Lấy tổng số lượng các mặt hàng trong giỏ
@@ -54,4 +66,5 @@ public interface ShoppingCartService {
 	 * Lấy tổng số tiền tất cả các mặt hàng trong giỏ
 	 */
 	double getAmount();
+
 }

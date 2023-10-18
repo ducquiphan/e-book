@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@include file="../views/commons/_taglib.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="../views/commons/_taglib.jsp"%>
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -18,14 +17,14 @@
 <meta charset="UTF-8">
 <!-- Site Title -->
 <title>Book Shop</title>
-<%@include file="../views/commons/_head.jsp" %>
+<%@include file="../views/commons/_head.jsp"%>
 </head>
 
 <body>
 	<!-- Start Header Area -->
-	<%@include file="../views/commons/_header.jsp" %>
+	<%@include file="../views/commons/_header.jsp"%>
 	<!-- End Header Area -->
-	
+
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
@@ -33,8 +32,7 @@
 				<div class="col-first">
 					<h1>Đơn hàng của tôi</h1>
 					<nav class="d-flex align-items-center">
-						<a href="/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-						<a href="/user/orders">Đơn hàng của tôi</a>
+						<a href="/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a> <a href="/user/orders">Đơn hàng của tôi</a>
 					</nav>
 				</div>
 			</div>
@@ -43,45 +41,50 @@
 	<!-- End Banner Area -->
 
 	<!--================Cart Area =================-->
-    <section class="cart_area">
-        <div class="container">
-            <div class="cart_inner">
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Mã đơn hàng</th>
-                                <th scope="col">Ngày mua</th>
-                                <th scope="col">Tổng tiền</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <h5>1</h5>
-                                </td>
-                                <td>
-                                    <h5>30/09/2023</h5>
-                                </td>
-                                <td>
-                                    <h5>500.000 VND</h5>
-                                </td>
-                                <td>
-                                    <a href="/user/orders/order-detail" class="text-danger" >Chi tiết</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================End Cart Area =================-->
+	<section class="cart_area">
+		<div class="container">
+			<div class="cart_inner">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Mã đơn hàng</th>
+								<th scope="col">Ngày mua</th>
+								<th scope="col">Tổng tiền</th>
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${orders}" var="order">
+								<tr>
+									<td>
+										<h5>${order.id}</h5>
+									</td>
+									<td>
+										<h5>
+											<fmt:formatDate value="${order.orderDate}" pattern="dd/MM/yyyy" />
+										</h5>
+									</td>
+									<td>
+										<h5>
+											<fmt:formatNumber pattern="#,##0" value="${order.getTotal()}" type="number" />
+										</h5>
+									</td>
+									<td><a href="/user/orders/order-detail?id=${order.id}" class="text-danger">Chi tiết</a></td>
+								</tr>
+
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--================End Cart Area =================-->
 
 	<!-- Start footer Area -->
-	<%@include file="../views/commons/_footer.jsp" %>
+	<%@include file="../views/commons/_footer.jsp"%>
 	<!-- End footer Area -->
-	<%@include file="../views/commons/_jsFiles.jsp" %>
+	<%@include file="../views/commons/_jsFiles.jsp"%>
 </body>
 </html>

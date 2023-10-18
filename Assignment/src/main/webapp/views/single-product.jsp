@@ -85,7 +85,7 @@
 								name="qty" id="sst" max="${book.qty}" min="1" value="1"
 								title="Quantity:" class="input-text qty">
 							<button
-								onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst < ${book.qty } ) result.value++;return false;"
+								onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst < ${book.qty }) result.value++;return false;"
 								class="increase items-count" type="button">
 								<i class="lnr lnr-chevron-up"></i>
 							</button>
@@ -96,7 +96,7 @@
 							</button>
 						</div>
 						<div class="card_area d-flex align-items-center">
-							<a class="primary-btn" href="/cart/add/${book.id}">Thêm vào giỏ hàng</a>
+							<a class="primary-btn" href="/cart/add?id=${book.id}&path=product">Thêm vào giỏ hàng</a>
 						</div>
 					</div>
 				</div>

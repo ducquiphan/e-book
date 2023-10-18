@@ -37,11 +37,9 @@ public class GlobalInterceptor implements HandlerInterceptor {
 	@Autowired
 	CategoryDAO categoryDAO;
 	@Autowired
-	OrderDetailDAO orderDetailDAO;
-	@Autowired
-	OrdersDAO ordersDAO;
-	@Autowired
 	PublisherDAO publisherDAO;
+	@Autowired
+	ShoppingCartService cart;
 	@Autowired
 	SessionService sessionService;
 
@@ -80,17 +78,11 @@ public class GlobalInterceptor implements HandlerInterceptor {
 			sessionService.setAttribute(Const.CATEGORIES, categoryDAO.findAll());
 		}
 		
-		if (sessionService.getAttribute(Const.ORDER_DETAILS) == null) {
-			sessionService.setAttribute(Const.ORDER_DETAILS, orderDetailDAO.findAll());
-		}
-		
-		if (sessionService.getAttribute(Const.ORDERS) == null) {
-			sessionService.setAttribute(Const.ORDERS, ordersDAO.findAll());
-		}
-		
 		if (sessionService.getAttribute(Const.PUBLISHERS) == null) {
 			sessionService.setAttribute(Const.PUBLISHERS, publisherDAO.findAll());
 		}
-
+		if (sessionService.getAttribute(Const.CART) == null) {
+			sessionService.setAttribute(Const.CART, cart.getCartItems());
+		}
 	}
 }

@@ -13,4 +13,5 @@ public class Const {
 	public static final String ORDER_DETAILS = "orderDetails";
 	public static final String PUBLISHERS = "publishers";
 	public static final String SECURITY_URI = "securityUri";
+	public static final String CART = "cart";
 }

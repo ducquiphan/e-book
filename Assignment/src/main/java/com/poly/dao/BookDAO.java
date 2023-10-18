@@ -6,6 +6,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -22,6 +23,7 @@ public interface BookDAO extends JpaRepository<Book, Integer> {
 
 	Page<Book> findAllByTitleLike(String title, Pageable pageable);
 	
+	@EntityGraph(attributePaths = {"author","category","publisher"}) 
 	Page<Book> findAllByIsActive(Boolean isActive, Pageable pageable);
 	
 //	@Query("Select new ReportIncome(c.id, c.name, count(od.order.id), sum(b.price * od.qty)) " + "from Category c "

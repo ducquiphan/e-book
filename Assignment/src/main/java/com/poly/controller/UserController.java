@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,11 @@ import org.springframework.web.multipart.MultipartFile;
 import com.poly.Const;
 import com.poly.dao.AccountDAO;
 import com.poly.dao.AdminDAO;
+import com.poly.dao.OrderDetailDAO;
+import com.poly.dao.OrdersDAO;
 import com.poly.entity.Account;
 import com.poly.entity.Admin;
+import com.poly.entity.Orders;
 import com.poly.model.MailInfo;
 import com.poly.service.CookieService;
 import com.poly.service.MailService;
@@ -61,6 +65,10 @@ public class UserController {
 	ServletContext app;
 	@Autowired
 	MailService mailService; 
+	@Autowired
+	OrderDetailDAO orderDetailDAO;
+	@Autowired
+	OrdersDAO ordersDAO;
 
 	@GetMapping("/login")
 	public String getLogin(Model model) {
@@ -272,12 +280,17 @@ public class UserController {
 	}
 
 	@GetMapping("/orders/order-detail")
-	public String getOrderDetail() {
+	public String getOrderDetail(Model model, @RequestParam("id") Integer id) {
+		Orders order = ordersDAO.findById(id).get();
+		model.addAttribute(Const.ORDERS, order);
+		model.addAttribute(Const.ORDER_DETAILS, orderDetailDAO.findAllByOrder(order));
 		return "order-detail";
 	}
 
 	@GetMapping("/orders")
-	public String getUserOrders() {
+	public String getUserOrders(Model model) {
+		List<Orders> orders = ordersDAO.findByAccount(sessionService.getAttribute(Const.ACCOUNT));
+		model.addAttribute(Const.ORDERS,orders);
 		return "my-orders";
 	}
 }

@@ -47,7 +47,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 		if (cartItem == null) {
 			cart.put(item.getId(), item);
 		} else {
-			cartItem.setQtyCart(cartItem.getQtyCart() + 1);
+			cartItem.setQty(cartItem.getQty() + 1);
 		}
 	}
 
@@ -87,7 +87,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 //			removeBook(id);
 //		}
 		CartItem cartItem = cart.get(id);
-		cartItem.setQtyCart(qtyCart);
+		cartItem.setQty(qtyCart);
 		return cartItem;
 	}
 
@@ -124,7 +124,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 //		for (Book book : cart.values()) {
 //			amount += book.getPrice() * book.getQty();
 //		}
-		return cart.values().stream().mapToDouble(item -> item.getQtyCart() * item.getPrice()).sum();
+		return cart.values().stream().mapToDouble(item -> item.getQty() * item.getPrice()).sum();
 	}
 
 	@Override

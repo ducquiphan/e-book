@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.poly.entity.Account;
 import com.poly.entity.Orders;
 
 @Repository
@@ -18,4 +19,9 @@ public interface OrdersDAO extends JpaRepository<Orders, Integer> {
 
 	@Procedure(name = "CalculateOrderTotal")
 	Double calculateTotal(@Param("orderId") int orderId);
+	
+	List<Orders> findByAccount(Account account);
+	
+	@Query("SELECT o FROM Orders o WHERE o.account = ?1 ORDER BY o.orderDate DESC ")  
+	List<Orders> findLastByAccount(Account account);
 }

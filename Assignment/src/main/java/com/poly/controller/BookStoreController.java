@@ -43,8 +43,6 @@ public class BookStoreController {
 
 	@GetMapping("/home")
 	public String getHome() {
-		List<Book> books = bookDAO.findAll();
-		sessionService.setAttribute("books", books);
 		return "index";
 	}
 
@@ -62,7 +60,6 @@ public class BookStoreController {
 	@GetMapping("/product")
 	public String getProductDetails(@RequestParam("id") Integer id, Model model) {
 		String filePath = app.getRealPath("/views/intro/"+  bookDAO.findById(id).get().getIntroduction());
-		System.out.println(filePath);
 		Path path = Paths.get(filePath);
 		byte[] bytes;
 		try {

@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="../views/commons/_taglib.jsp"%>
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
 <!-- Mobile Specific Meta -->
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Favicon-->
 <link rel="shortcut icon" href="../views/img/fav.png">
 <!-- Author Meta -->
@@ -30,13 +28,11 @@
 	<!-- Start Banner Area -->
 	<section class="banner-area organic-breadcrumb">
 		<div class="container">
-			<div
-				class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
 				<div class="col-first">
 					<h1>Xác nhận đơn hàng</h1>
 					<nav class="d-flex align-items-center">
-						<a href="/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-						<a href="">Xác nhận đơn hàng</a>
+						<a href="/home">Trang chủ<span class="lnr lnr-arrow-right"></span></a> <a href="">Xác nhận đơn hàng</a>
 					</nav>
 				</div>
 			</div>
@@ -47,12 +43,10 @@
 	<!--================Order Details Area =================-->
 	<section class="order_details section_gap">
 		<div class="container">
-			<h3 class="title_confirmation">Cám ơn bạn vì đã chọn chúng tôi.
-				Đơn hàng của bạn đã được xác nhận.</h3>
+			<h3 class="title_confirmation">Cám ơn bạn vì đã chọn chúng tôi. Đơn hàng của bạn đã được xác nhận.</h3>
 			<div class="order_d_inner">
 				<div class="">
 					<div class="details_item">
-
 						<h4>Thông tin đơn hàng</h4>
 						<table class="table">
 							<thead>
@@ -65,11 +59,11 @@
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">1</th>
-									<td>1/10/2023</td>
-									<td>500.000vnd</td>
+									<th scope="row">${orders.id}</th>
+									<td><fmt:formatDate value="${orders.orderDate}" pattern="dd/MM/yyyy" /></td>
+									<td><fmt:formatNumber type="number" value="${orders.getTotal()}" pattern="#,##0" /></td>
 									<td>Paypal</td>
-								</tr>								
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -87,17 +81,23 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<p>Nhà Giả Kim</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>500.000 vnd</p>
-								</td>
-							</tr>
+							<c:forEach var="item" items="${orderDetails}">
+								<tr>
+									<td>
+										<p>${item.book.title}</p>
+									</td>
+									<td>
+										<p>${item.qty}</p>
+									</td>
+									<td>
+										<p>
+											<fmt:formatNumber type="number" value="${item.qty*item.price}" pattern="#,##0" />
+											VND
+										</p>
+									</td>
+								</tr>
+							</c:forEach>
+
 						</tbody>
 					</table>
 				</div>

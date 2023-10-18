@@ -61,11 +61,11 @@
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">1</th>
-									<td>1/10/2023</td>
-									<td>500.000vnd</td>
+									<th scope="row">${orders.id}</th>
+									<td><fmt:formatDate value="${orders.orderDate}" pattern="dd/MM/yyyy" /></td>
+									<td>${orders.getTotal()}</td>
 									<td>Paypal</td>
-								</tr>								
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -83,17 +83,22 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>
-									<p>Nhà Giả Kim</p>
-								</td>
-								<td>
-									<h5>x 02</h5>
-								</td>
-								<td>
-									<p>500.000 VND</p>
-								</td>
-							</tr>
+							<c:forEach var="item" items="${orderDetails}">
+								<tr>
+									<td>
+										<p>${item.book.title}</p>
+									</td>
+									<td>
+										<h5>${item.qty}</h5>
+									</td>
+									<td>
+										<p>
+											<fmt:formatNumber type="number" value="${item.qty*item.price}" pattern="#,##0" />
+											VND
+										</p>
+									</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 				</div>

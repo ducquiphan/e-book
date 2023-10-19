@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -27,6 +29,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.poly.Const;
 import com.poly.dao.AccountDAO;
 import com.poly.dao.AdminDAO;
+import com.poly.dao.BooksOfAccountDAO;
 import com.poly.dao.OrderDetailDAO;
 import com.poly.dao.OrdersDAO;
 import com.poly.entity.Account;
@@ -69,6 +72,8 @@ public class UserController {
 	OrderDetailDAO orderDetailDAO;
 	@Autowired
 	OrdersDAO ordersDAO;
+	@Autowired
+	BooksOfAccountDAO booksOfAccountDAO;
 
 	@GetMapping("/login")
 	public String getLogin(Model model) {
@@ -191,12 +196,14 @@ public class UserController {
 	}
 
 	@GetMapping("/my-bookshelf")
-	public String getUserBookshelf() {
+	public String getUserBookshelf(Model model, @RequestParam("p") Optional<Integer> p) {
+		Pageable page = PageRequest.of(p.orElse(0), 6);
+		model.addAttribute("page", booksOfAccountDAO.findByAccount(sessionService.getAttribute(Const.ACCOUNT), page));
 		return "my-bookshelf";
 	}
 
-	@PostMapping("/my-product")
-	public String getMyProduct() {
+	@GetMapping("/my-bookshelf/my-product")
+	public String getMyProduct(Model model, @RequestParam("id") Optional<Integer> id) {
 		return "my-bookshelf";
 	}
 

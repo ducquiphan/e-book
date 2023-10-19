@@ -20,8 +20,7 @@ public interface OrdersDAO extends JpaRepository<Orders, Integer> {
 	@Procedure(name = "CalculateOrderTotal")
 	Double calculateTotal(@Param("orderId") int orderId);
 	
+	@Query("select o  from Orders o where o.account = ?1 and o.isActive = true")
 	List<Orders> findByAccount(Account account);
 	
-	@Query("SELECT o FROM Orders o WHERE o.account = ?1 ORDER BY o.orderDate DESC ")  
-	List<Orders> findLastByAccount(Account account);
 }

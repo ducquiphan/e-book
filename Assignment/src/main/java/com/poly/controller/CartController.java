@@ -133,8 +133,8 @@ public class CartController {
 						order.setAccount(session.getAttribute(Const.ACCOUNT));
 						order.setPhone(phone);
 						ordersDAO.save(order);
-						List<Orders> orders = ordersDAO.findLastByAccount(session.getAttribute(Const.ACCOUNT));
-						order = orders.get(0);
+						order = ordersDAO.save(order);
+						session.setAttribute("order", order);
 						for (CartItem item : cart.getCartItems().values()) {
 							OrderDetail orderDetail = new OrderDetail();
 							orderDetail.setOrder(order);
@@ -142,13 +142,16 @@ public class CartController {
 							orderDetail.setQty(item.getQty());
 							orderDetail.setPrice(item.getPrice());
 							orderDetailDAO.save(orderDetail);
-							BooksOfAccount booksOfAccount = new BooksOfAccount();
-							booksOfAccount.setBook(bookDAO.findById(item.getId()).get());
-							booksOfAccount.setAccount(session.getAttribute(Const.ACCOUNT));
-							booksOfAccountDAO.save(booksOfAccount);
+							List<BooksOfAccount> booksOfAccounts = booksOfAccountDAO.findByBookAndAccount(bookDAO.findById(item.getId()).get(), session.getAttribute(Const.ACCOUNT));
+							if (booksOfAccounts.isEmpty()) {
+								BooksOfAccount booksOfAccount = new BooksOfAccount();
+								booksOfAccount.setBook(bookDAO.findById(item.getId()).get());
+								booksOfAccount.setAccount(session.getAttribute(Const.ACCOUNT));
+								booksOfAccountDAO.save(booksOfAccount);
+							}
 						}
 						String body = "Đơn hàng của bạn đã được thanh toán thành công. Cảm ơn bạn "+fullname+" đã tin tưởng và mua hàng của chúng tôi";
-						mailService.send(email, "[Bokonl] Xác nhận đơn hàng thành công", body);
+						mailService.queue(email, "[Bokonl] Xác nhận đơn hàng thành công", body);
 						
 						return "redirect:/cart/confirmation";
 					}else {
@@ -168,9 +171,8 @@ public class CartController {
 
 	@GetMapping("/confirmation")
 	public String getConfirmation(Model model) {
-		List<Orders> orders = ordersDAO.findLastByAccount(session.getAttribute(Const.ACCOUNT));
-		model.addAttribute(Const.ORDERS,orders.get(0));
-		model.addAttribute(Const.ORDER_DETAILS,orderDetailDAO.findAllByOrder(orders.get(0)));
+		model.addAttribute("order",session.getAttribute("order"));
+		model.addAttribute(Const.ORDER_DETAILS,orderDetailDAO.findAllByOrder(session.getAttribute("order")));
 		return "confirmation";
 	}
 

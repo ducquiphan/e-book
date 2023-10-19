@@ -59,9 +59,9 @@
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">${orders.id}</th>
-									<td><fmt:formatDate value="${orders.orderDate}" pattern="dd/MM/yyyy" /></td>
-									<td><fmt:formatNumber type="number" value="${orders.getTotal()}" pattern="#,##0" /></td>
+									<th scope="row">${sessionScope.order.id}</th>
+									<td><fmt:formatDate value="${sessionScope.order.orderDate}" pattern="dd/MM/yyyy" /></td>
+									<td><fmt:formatNumber type="number" value="${sessionScope.order.getTotal()}" pattern="#,##0" /></td>
 									<td>Paypal</td>
 								</tr>
 							</tbody>

@@ -70,10 +70,6 @@ public class GlobalInterceptor implements HandlerInterceptor {
 			sessionService.setAttribute(Const.BOOKS, bookDAO.findAll());
 		}
 		
-		if (sessionService.getAttribute(Const.BOOKS_OF_ACCOUNTS) == null) {
-			sessionService.setAttribute(Const.BOOKS_OF_ACCOUNTS, booksOfAccountDAO.findAll());
-		}
-		
 		if (sessionService.getAttribute(Const.CATEGORIES) == null) {
 			sessionService.setAttribute(Const.CATEGORIES, categoryDAO.findAll());
 		}

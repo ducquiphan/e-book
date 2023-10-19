@@ -87,8 +87,8 @@ public class CartController {
 		cart.addBook(item);
 		session.setAttribute(Const.CART, cart.getCartItems());
 		String uri = "";
-		if (path.equals("category")) {
-			uri = "/category";
+		if (path.contains("/category")) {
+			uri = path;
 		} else if (path.equals("product")) {
 			uri = "/product?id=" + id;
 		}
@@ -134,7 +134,6 @@ public class CartController {
 						order.setPhone(phone);
 						ordersDAO.save(order);
 						order = ordersDAO.save(order);
-						session.setAttribute("order", order);
 						for (CartItem item : cart.getCartItems().values()) {
 							OrderDetail orderDetail = new OrderDetail();
 							orderDetail.setOrder(order);
@@ -171,8 +170,9 @@ public class CartController {
 
 	@GetMapping("/confirmation")
 	public String getConfirmation(Model model) {
-		model.addAttribute("order",session.getAttribute("order"));
-		model.addAttribute(Const.ORDER_DETAILS,orderDetailDAO.findAllByOrder(session.getAttribute("order")));
+		List<Orders> order = ordersDAO.findByAccount(session.getAttribute(Const.ACCOUNT));
+		model.addAttribute("order", order.get(order.size()-1));
+		model.addAttribute(Const.ORDER_DETAILS, orderDetailDAO.findAllByOrder(order.get(order.size()-1)));
 		return "confirmation";
 	}
 

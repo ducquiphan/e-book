@@ -152,7 +152,7 @@
 											<h6 class="l-through">$$$$$ VND</h6>
 										</div>
 										<div class="prd-bottom">
-											<a href="/cart/add?id=${b.id}&path=category" class="social-info"> <span class="ti-bag"></span>
+											<a href="/cart/add?id=${b.id}&path=/category?p=${page.number}" class="social-info"> <span class="ti-bag"></span>
 												<p class="hover-text">Thêm vào giỏ</p>
 											</a> <a href="/product?id=${b.id}" class="social-info"> <span class="lnr lnr-move"></span>
 												<p class="hover-text">Xem chi tiết</p>
@@ -167,7 +167,7 @@
 				<nav aria-label="Page navigation example">
 					<ul class="pagination justify-content-center">
 						<c:if test="${page.number == 0}">
-							<li class="page-item disabled"><a href="/category?p=0}" class="page-link"><i class="ti ti-angle-double-left"></i></a></li>
+							<li class="page-item disabled"><a href="/category?p=0" class="page-link"><i class="ti ti-angle-double-left"></i></a></li>
 							<li class="page-item disabled"><a href="/category?p=0" class="page-link"><i class="ti ti-angle-left"></i></a></li>
 						</c:if>
 						<c:if test="${page.number != 0}">

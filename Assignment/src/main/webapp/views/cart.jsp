@@ -78,14 +78,14 @@
 										<td>
 											<div class="product_count">
 												<input type="number" name="qty" value="${item.value.qty}" onblur="this.form.submit()" onchange="this.form.submit()"
-													id="sst" maxlength="" title="Số lượng:" class="input-text qty">
+													id="${item.value.id}sst" maxlength="" title="Số lượng:" class="input-text qty">
 												<button
-													onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst < 20 ){ result.value++; this.form.submit} else return false;"
+													onclick="var result = document.getElementById('${item.value.id}sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst < 20 ){ result.value++; this.form.submit()} else return false;"
 													class="increase items-count" type="button">
 													<i class="lnr lnr-chevron-up"></i>
 												</button>
 												<button
-													onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 1 ) {result.value--; this.form.submit()} else return false;"
+													onclick="var result = document.getElementById('${item.value.id}sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 1 ) {result.value--; this.form.submit()} else return false;"
 													class="reduced items-count" type="button">
 													<i class="lnr lnr-chevron-down"></i>
 												</button>

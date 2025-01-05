@@ -1,3 +1,3 @@
 # E-book
-Assignment Java web using Spring Boot 4
+Assignment Java web using Spring Boot 3
 This assignment is a bookstore e-commerce that sells e-books. Customers can buy and read e-books from this page. At the moment, users can only buy and see their orders, but cannot read e-books, more functionalities will be developed in the future, After making a checkout, users will receive an email to confirm that their purchases are successful. There is also an admin web page to manage all the content. From the home page, users can see four new books displayed there. The category page will show six books from the cloud database to the website, users can move to the next or previous page and the next/previous items will be shown.
